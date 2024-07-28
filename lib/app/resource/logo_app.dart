@@ -13,9 +13,10 @@ class LogoApp extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(UtilsReponsive.height(10, context)),
       decoration: BoxDecoration(
+        border: Border.all(color: Colors.teal),
         color: ColorManager.primaryColor,
         shape: BoxShape.circle,
       ),
-      child: Image.asset('assets/logo_milk.png', fit: BoxFit.contain,));
+      child: Image.asset('assets/theday_logo.png', fit: BoxFit.contain,));
   }
 }
