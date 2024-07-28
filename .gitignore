@@ -1,0 +1,5 @@
+test/widget_test.dart
+pubspec.lock
+.dart_tool
+build
+macos
