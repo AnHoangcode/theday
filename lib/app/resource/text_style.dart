@@ -11,7 +11,7 @@ class TextConstant {
       Color color = Colors.black}) {
     return Text(
       text,
-      style: GoogleFonts.montserratAlternates(
+      style: GoogleFonts.montserrat(
           fontSize: UtilsReponsive.formatFontSize(size, context),
           fontWeight: fontWeight,
           color: color),
@@ -25,7 +25,7 @@ class TextConstant {
       Color color = Colors.black}) {
     return Text(
       text,
-      style: GoogleFonts.montserratAlternates(
+      style: GoogleFonts.montserrat(
           fontSize: UtilsReponsive.formatFontSize(size, context),
           fontWeight: fontWeight,
           color: color),
@@ -39,7 +39,7 @@ class TextConstant {
       Color color = Colors.black}) {
     return Text(
       text,
-      style: GoogleFonts.montserratAlternates(
+      style: GoogleFonts.montserrat(
           fontSize: UtilsReponsive.formatFontSize(size, context),
           fontWeight: fontWeight,
           color: color),
@@ -53,7 +53,7 @@ class TextConstant {
       Color color = Colors.black}) {
     return Text(
       text,
-      style: GoogleFonts.montserratAlternates(
+      style: GoogleFonts.montserrat(
           fontSize: UtilsReponsive.formatFontSize(size, context),
           fontWeight: fontWeight,
           color: color),
@@ -67,7 +67,7 @@ class TextConstant {
       Color color = Colors.black}) {
     return Text(
       text,
-      style: GoogleFonts.montserratAlternates(
+      style: GoogleFonts.montserrat(
           fontSize: UtilsReponsive.formatFontSize(size, context),
           fontWeight: fontWeight,
           color: color),
@@ -81,7 +81,7 @@ class TextConstant {
       Color color = Colors.black}) {
     return Text(
       text,
-      style: GoogleFonts.montserratAlternates(
+      style: GoogleFonts.montserrat(
           fontSize: UtilsReponsive.formatFontSize(size, context),
           fontWeight: fontWeight,
           color: color),
