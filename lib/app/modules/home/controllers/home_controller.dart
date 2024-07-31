@@ -1,9 +1,14 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:theday/app/modules/nav-home/views/nav_home_view.dart';
 
 class HomeController extends GetxController {
-  //TODO: Implement HomeController
-
-  final count = 0.obs;
+  final index = 0.obs;
+  List<Widget> listScreen = [
+    NavHomeView(),
+    SizedBox(),
+    SizedBox(),
+  ];
   @override
   void onInit() {
     super.onInit();
@@ -19,5 +24,6 @@ class HomeController extends GetxController {
     super.onClose();
   }
 
-  void increment() => count.value++;
+  void increment() => index.value++;
 }
+

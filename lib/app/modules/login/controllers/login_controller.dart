@@ -3,6 +3,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:theday/app/routes/app_pages.dart';
 
 class LoginController extends GetxController {
   //TODO: Implement LoginController
@@ -50,5 +51,7 @@ class LoginController extends GetxController {
     passwordError.value = '';
   }
 
-  Future<void> login() async {}
+  Future<void> login() async {
+    Get.toNamed(Routes.HOME);
+  }
 }
