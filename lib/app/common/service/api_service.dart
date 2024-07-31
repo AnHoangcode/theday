@@ -48,10 +48,11 @@ class ApiService {
 
   Future<T> fetchDataObjectWithPost<T>(
       String apiUrl, T Function(Map<String, dynamic>) fromJson,
-      {required Object body}) async {
+      {required Object body, bool isUsingToken = true}) async {
     final response = await http.post(Uri.parse(apiUrl),
-        headers: BaseCommon.instance.headerRequest(), body: jsonEncode(body));
-    log("payload: ${body.toString()}");
+        headers: BaseCommon.instance.headerRequest(isUsingToken: false),
+        body: jsonEncode(body));
+    log("payload: ${jsonEncode(body)}");
     log('StatusCode ${response.statusCode} - $apiUrl');
     log('Body ${response.body}');
     if (response.statusCode == 200) {

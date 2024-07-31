@@ -93,7 +93,7 @@ class LoginView extends GetView<LoginController> {
                             ColorManager.secondaryColor),
                         padding: MaterialStateProperty.all(EdgeInsets.all(14)),
                       ),
-                      child: Obx(() => controller.isLoading.value
+                      child: Obx(() => controller.isLockButton.value
                           ? const CupertinoActivityIndicator(
                               color: Colors.white,
                             )

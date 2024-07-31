@@ -30,11 +30,11 @@ class BaseCommon {
     };
   }
 
-  Future<void> savePassword(
-      {required String username, required String password}) async {
+  Future<void> saveAccount(
+      {required Account account}) async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setString('username', username);
-    await prefs.setString('password', password);
+    accountSession = account;
+    await prefs.setString('token', account.token!);
   }
 
   Future<void> removeLogin() async {
