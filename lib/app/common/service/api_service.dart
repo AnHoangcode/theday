@@ -12,7 +12,7 @@ class ApiService {
     log('StatusCode ${response.statusCode} - $apiUrl');
     log('Body ${response.body}');
     if (response.statusCode == 200) {
-      final List<dynamic> data = json.decode(response.body);
+      final List<dynamic> data = json.decode(response.body)['data'];
       return data.map<T>((item) => fromJson(item)).toList();
     }
     throw Exception(json.decode(response.body)['message']);
@@ -56,7 +56,7 @@ class ApiService {
     log('StatusCode ${response.statusCode} - $apiUrl');
     log('Body ${response.body}');
     if (response.statusCode == 200) {
-      final data = json.decode(response.body);
+      final data = json.decode(response.body)["data"];
       return fromJson(data);
     }
     throw Exception(json.decode(response.body)['message']);

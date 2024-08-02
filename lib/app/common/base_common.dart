@@ -1,3 +1,6 @@
+import 'dart:convert';
+import 'dart:developer';
+
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:theday/app/common/model/account.dart';
 
@@ -34,6 +37,8 @@ class BaseCommon {
       {required Account account}) async {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     accountSession = account;
+    accessToken = account.token;
+    log(jsonEncode(account));
     await prefs.setString('token', account.token!);
   }
 

@@ -4,11 +4,17 @@
 
 import 'dart:convert';
 
+
+const ROLE_COUPLE = 'COUPLE';
+
+// To parse this JSON data, do
+//
+//     final account = accountFromJson(jsonString);
+
+
 Account accountFromJson(String str) => Account.fromJson(json.decode(str));
 
 String accountToJson(Account data) => json.encode(data.toJson());
-
-const ROLE_COUPLE = 'COUPLE';
 
 class Account {
     int? accountId;
@@ -16,6 +22,7 @@ class Account {
     String? roleName;
     String? email;
     String? status;
+    String? userId;
 
     Account({
         this.accountId,
@@ -23,6 +30,7 @@ class Account {
         this.roleName,
         this.email,
         this.status,
+        this.userId,
     });
 
     Account copyWith({
@@ -31,6 +39,7 @@ class Account {
         String? roleName,
         String? email,
         String? status,
+        String? userId,
     }) => 
         Account(
             accountId: accountId ?? this.accountId,
@@ -38,6 +47,7 @@ class Account {
             roleName: roleName ?? this.roleName,
             email: email ?? this.email,
             status: status ?? this.status,
+            userId: userId ?? this.userId,
         );
 
     factory Account.fromJson(Map<String, dynamic> json) => Account(
@@ -46,6 +56,7 @@ class Account {
         roleName: json["roleName"],
         email: json["email"],
         status: json["status"],
+        userId: json["userId"],
     );
 
     Map<String, dynamic> toJson() => {
@@ -54,5 +65,6 @@ class Account {
         "roleName": roleName,
         "email": email,
         "status": status,
+        "userId": userId,
     };
 }
