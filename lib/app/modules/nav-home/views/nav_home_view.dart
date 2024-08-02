@@ -9,6 +9,7 @@ import 'package:theday/app/resource/logo_app.dart';
 import 'package:theday/app/resource/reponsive_utils.dart';
 import 'package:theday/app/resource/text_style.dart';
 import 'package:theday/app/resource/util_common.dart';
+import 'package:theday/app/routes/app_pages.dart';
 
 import '../controllers/nav_home_controller.dart';
 
@@ -53,8 +54,13 @@ class NavHomeView extends GetView<NavHomeController> {
                             )
                           : ListView.separated(
                               shrinkWrap: true,
-                              itemBuilder: (context, index) => _cardProjectForCouple(
-                                  context, controller.listBooking.value[index]),
+                              itemBuilder: (context, index) => GestureDetector(
+                                onTap: () {
+                                  Get.toNamed(Routes.BOOKING_DETAIL, arguments: controller.listBooking[index]);
+                                },
+                                child: _cardProjectForCouple(
+                                    context, controller.listBooking.value[index]),
+                              ),
                               separatorBuilder: (context, index) =>
                                   SizedBoxConst.size(context: context),
                               itemCount: controller.listBooking.value.length),

@@ -10,8 +10,8 @@ import 'package:theday/app/routes/app_pages.dart';
 class LoginController extends GetxController {
   //TODO: Implement LoginController
 
-  TextEditingController emailController = TextEditingController(text: 'tricuong8635.work@gmail.com');
-  TextEditingController passwordController = TextEditingController(text: '123456789');
+  TextEditingController emailController = TextEditingController(text: '');
+  TextEditingController passwordController = TextEditingController(text: '');
 
   Rx<String> emailError = ''.obs;
   Rx<String> passwordError = ''.obs;

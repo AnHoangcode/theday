@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/booking-detail/bindings/booking_detail_binding.dart';
+import '../modules/booking-detail/views/booking_detail_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
@@ -43,6 +45,11 @@ class AppPages {
       name: _Paths.NAV_ACCOUNT,
       page: () => const NavAccountView(),
       binding: NavAccountBinding(),
+    ),
+    GetPage(
+      name: _Paths.BOOKING_DETAIL,
+      page: () => const BookingDetailView(),
+      binding: BookingDetailBinding(),
     ),
   ];
 }
