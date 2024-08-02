@@ -1,0 +1,233 @@
+{
+  "message": "Get all bookings by couple successfully",
+  "data": [
+    {
+      "id": "BOOKING-1",
+      "couple": {
+        "id": "COUPLE-1",
+        "partnerName1": "string",
+        "partnerName2": "string",
+        "status": "STARTED",
+        "weddingDate": "2024-07-07",
+        "account": {
+          "id": 4,
+          "email": "couple@gmail.com",
+          "name": "COUPLE",
+          "image": null,
+          "phoneNumber": "0123456789",
+          "address": "string",
+          "status": "ACTIVATED",
+          "provider": "LOCAL",
+          "role": {
+            "id": 2,
+            "name": "COUPLE"
+          }
+        }
+      },
+      "createdAt": "2024-07-29 23:50:12",
+      "completedDate": "2024-07-30",
+      "serviceBookings": [
+        {
+          "service": {
+            "id": "SERVICE-4",
+            "name": "Chụp Hình",
+            "description": "abc",
+            "type": "LUXURY",
+            "price": 2200,
+            "listImages": [],
+            "status": "ACTIVATED",
+            "categoryResponse": {
+              "id": "CATEGORY-1",
+              "categoryName": "PHOTO",
+              "status": "ACTIVATED"
+            },
+            "serviceSupplierResponse": {
+              "id": "SERVICE-SUPPLIER-1",
+              "supplierName": "string",
+              "contactPersonName": "string",
+              "contactPhone": "0123456789",
+              "contactEmail": "servicesupplier@gmail.com",
+              "status": "ACTIVATED"
+            },
+            "promotionService": null
+          },
+          "bookingPrice": 20000000
+        },
+        {
+          "service": {
+            "id": "SERVICE-2",
+            "name": "Dress services",
+            "description": "string",
+            "type": "ECONOMY",
+            "price": 1200000,
+            "listImages": [],
+            "status": "ACTIVATED",
+            "categoryResponse": {
+              "id": "CATEGORY-2",
+              "categoryName": "DRESS",
+              "status": "ACTIVATED"
+            },
+            "serviceSupplierResponse": {
+              "id": "SERVICE-SUPPLIER-1",
+              "supplierName": "string",
+              "contactPersonName": "string",
+              "contactPhone": "0123456789",
+              "contactEmail": "servicesupplier@gmail.com",
+              "status": "ACTIVATED"
+            },
+            "promotionService": null
+          },
+          "bookingPrice": 20000000
+        }
+      ],
+      "totalPrice": 40000000,
+      "status": "CONFIRM"
+    },
+    {
+      "id": "BOOKING-2",
+      "couple": {
+        "id": "COUPLE-1",
+        "partnerName1": "string",
+        "partnerName2": "string",
+        "status": "STARTED",
+        "weddingDate": "2024-07-07",
+        "account": {
+          "id": 4,
+          "email": "couple@gmail.com",
+          "name": "COUPLE",
+          "image": null,
+          "phoneNumber": "0123456789",
+          "address": "string",
+          "status": "ACTIVATED",
+          "provider": "LOCAL",
+          "role": {
+            "id": 2,
+            "name": "COUPLE"
+          }
+        }
+      },
+      "createdAt": "2024-07-30 00:17:56",
+      "completedDate": "2024-07-31",
+      "serviceBookings": [
+        {
+          "service": {
+            "id": "SERVICE-1",
+            "name": "string",
+            "description": "string",
+            "type": "ECONOMY",
+            "price": 200,
+            "listImages": [],
+            "status": "ACTIVATED",
+            "categoryResponse": {
+              "id": "CATEGORY-1",
+              "categoryName": "PHOTO",
+              "status": "ACTIVATED"
+            },
+            "serviceSupplierResponse": {
+              "id": "SERVICE-SUPPLIER-1",
+              "supplierName": "string",
+              "contactPersonName": "string",
+              "contactPhone": "0123456789",
+              "contactEmail": "servicesupplier@gmail.com",
+              "status": "ACTIVATED"
+            },
+            "promotionService": {
+              "id": "PROMOTION-2",
+              "promotionDetails": "string",
+              "percent": 20,
+              "startDate": "2024-07-09",
+              "endDate": "2024-08-20",
+              "status": "ACTIVATED"
+            }
+          },
+          "bookingPrice": 20000000
+        },
+        {
+          "service": {
+            "id": "SERVICE-3",
+            "name": "Chụp Hình",
+            "description": "abc",
+            "type": "ECONOMY",
+            "price": 200000,
+            "listImages": [],
+            "status": "ACTIVATED",
+            "categoryResponse": {
+              "id": "CATEGORY-1",
+              "categoryName": "PHOTO",
+              "status": "ACTIVATED"
+            },
+            "serviceSupplierResponse": {
+              "id": "SERVICE-SUPPLIER-1",
+              "supplierName": "string",
+              "contactPersonName": "string",
+              "contactPhone": "0123456789",
+              "contactEmail": "servicesupplier@gmail.com",
+              "status": "ACTIVATED"
+            },
+            "promotionService": null
+          },
+          "bookingPrice": 20000000
+        }
+      ],
+      "totalPrice": 40000000,
+      "status": "WAITING"
+    },
+    {
+      "id": "BOOKING-3",
+      "couple": {
+        "id": "COUPLE-1",
+        "partnerName1": "string",
+        "partnerName2": "string",
+        "status": "STARTED",
+        "weddingDate": "2024-07-07",
+        "account": {
+          "id": 4,
+          "email": "couple@gmail.com",
+          "name": "COUPLE",
+          "image": null,
+          "phoneNumber": "0123456789",
+          "address": "string",
+          "status": "ACTIVATED",
+          "provider": "LOCAL",
+          "role": {
+            "id": 2,
+            "name": "COUPLE"
+          }
+        }
+      },
+      "createdAt": "2024-07-31 19:02:58",
+      "completedDate": "2024-08-12",
+      "serviceBookings": [
+        {
+          "service": {
+            "id": "SERVICE-8",
+            "name": "Ngoại cảnh",
+            "description": "string",
+            "type": "ECONOMY",
+            "price": 10000000,
+            "listImages": [],
+            "status": "ACTIVATED",
+            "categoryResponse": {
+              "id": "CATEGORY-1",
+              "categoryName": "PHOTO",
+              "status": "ACTIVATED"
+            },
+            "serviceSupplierResponse": {
+              "id": "SERVICE-SUPPLIER-3",
+              "supplierName": "string",
+              "contactPersonName": "string",
+              "contactPhone": "0123456789",
+              "contactEmail": "cuongnht86.work@gmail.com",
+              "status": "ACTIVATED"
+            },
+            "promotionService": null
+          },
+          "bookingPrice": 10000000
+        }
+      ],
+      "totalPrice": 10000000,
+      "status": "WAITING"
+    }
+  ],
+  "status": "SUCCESS"
+}

@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 import 'package:theday/app/common/base_common.dart';
+import 'package:theday/app/common/model/booking.dart';
 import 'package:theday/app/resource/base_define.dart';
 import 'package:theday/app/resource/logo_app.dart';
 import 'package:theday/app/resource/reponsive_utils.dart';
 import 'package:theday/app/resource/text_style.dart';
+import 'package:theday/app/resource/util_common.dart';
 
 import '../controllers/nav_home_controller.dart';
 
@@ -39,6 +42,7 @@ class NavHomeView extends GetView<NavHomeController> {
                     ),
                   ),
                 ),
+                SizedBoxConst.size(context: context, size: 20),
                 Obx(
                   () => controller.isLoading.value
                       ? Center(child: CircularProgressIndicator())
@@ -47,17 +51,105 @@ class NavHomeView extends GetView<NavHomeController> {
                               child: TextConstant.subTile2(context,
                                   text: 'Dữ liệu trống'),
                             )
-                          : Expanded(
-                              child: ListView.separated(
-                                  itemBuilder: (context, index) => Container(
-                                        height: 10,
-                                      ),
-                                  separatorBuilder: (context, index) =>
-                                      SizedBoxConst.size(context: context),
-                                  itemCount:
-                                      controller.listBooking.value.length)),
+                          : ListView.separated(
+                              shrinkWrap: true,
+                              itemBuilder: (context, index) => _cardProject(
+                                  context, controller.listBooking.value[index]),
+                              separatorBuilder: (context, index) =>
+                                  SizedBoxConst.size(context: context),
+                              itemCount: controller.listBooking.value.length),
                 )
               ],
             )));
+  }
+
+  Container _cardProject(BuildContext context, Booking project) {
+    return Container(
+        // height: UtilsReponsive.height(100, context),
+        width: double.infinity,
+        decoration: BoxDecoration(
+            borderRadius:
+                BorderRadius.circular(UtilsReponsive.height(15, context)),
+            color: ColorManager.secondaryColor),
+        padding: EdgeInsets.symmetric(
+            vertical: UtilsReponsive.height(10, context),
+            horizontal: UtilsReponsive.height(10, context)),
+        child: Row(
+          children: [
+            Container(
+              height: UtilsReponsive.height(60, context),
+              width: UtilsReponsive.height(60, context),
+              decoration: BoxDecoration(
+                  borderRadius:
+                      BorderRadius.circular(UtilsReponsive.height(10, context)),
+                  color: ColorManager.secondaryColor),
+              child: FittedBox(
+                  child: TextConstant.subTile3(
+                      text: 'P', color: Colors.white, context)),
+            ),
+            SizedBoxConst.sizeWith(context: context, size: 20),
+            Expanded(
+                child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // TextConstant.subTile3(
+                //     text: '${project.id}',
+                //     color: Colors.white,
+                //     fontWeight: FontWeight.bold,
+                //     context),
+                // SizedBoxConst.size(context: context, size: 5),
+                Row(
+                  children: [
+                    Icon(
+                      Icons.calendar_month,
+                      color: Colors.white,
+                      size: UtilsReponsive.height(16, context),
+                    ),
+                    SizedBoxConst.sizeWith(context: context, size: 5),
+                    TextConstant.subTile2(
+                        text:
+                            '${UtilCommon.convertDateTime(project.couple!.weddingDate!)} - ${UtilCommon.convertDateTime(project.completedDate!)} ',
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500,
+                        context),
+                  ],
+                ),
+                SizedBoxConst.size(context: context),
+
+                Row(
+                  children: [
+                    TextConstant.subTile3(context,
+                        text: 'Trạng thái:', size: 10, color: Colors.white),
+                    SizedBoxConst.sizeWith(context: context),
+                    Container(
+                      padding:
+                          EdgeInsets.all(UtilsReponsive.height(2, context)),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(
+                              UtilsReponsive.height(5, context)),
+                          color: Colors.white),
+                      child: TextConstant.subTile3(context,
+                          text: project.status!, size: 10),
+                    ),
+                  ],
+                ),
+                SizedBoxConst.size(context: context),
+                Row(
+                  children: [
+                    TextConstant.subTile3(context,
+                        text: 'Tổng:', size: 10, color: Colors.white),
+                    SizedBoxConst.sizeWith(context: context, size: 5),
+                    TextConstant.subTile1(
+                      context,
+                      color: Colors.white,
+                      text:
+                          '${NumberFormat.currency(locale: 'vi_VN', symbol: 'VND').format(project.totalPrice)}',
+                    ),
+                  ],
+                )
+              ],
+            ))
+          ],
+        ));
   }
 }
