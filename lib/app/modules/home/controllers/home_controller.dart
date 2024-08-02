@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:theday/app/modules/nav-account/views/nav_account_view.dart';
 import 'package:theday/app/modules/nav-home/views/nav_home_view.dart';
 
 class HomeController extends GetxController {
   final index = 0.obs;
   List<Widget> listScreen = [
     NavHomeView(),
-    SizedBox(),
-    SizedBox(),
+    NavAccountView(),
   ];
   @override
   void onInit() {

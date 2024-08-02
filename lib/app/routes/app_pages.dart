@@ -4,6 +4,8 @@ import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
 import '../modules/login/views/login_view.dart';
+import '../modules/nav-account/bindings/nav_account_binding.dart';
+import '../modules/nav-account/views/nav_account_view.dart';
 import '../modules/nav-home/bindings/nav_home_binding.dart';
 import '../modules/nav-home/views/nav_home_view.dart';
 import '../modules/welcome/bindings/welcome_binding.dart';
@@ -36,6 +38,11 @@ class AppPages {
       name: _Paths.NAV_HOME,
       page: () => const NavHomeView(),
       binding: NavHomeBinding(),
+    ),
+    GetPage(
+      name: _Paths.NAV_ACCOUNT,
+      page: () => const NavAccountView(),
+      binding: NavAccountBinding(),
     ),
   ];
 }
