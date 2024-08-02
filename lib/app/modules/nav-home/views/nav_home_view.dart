@@ -53,7 +53,7 @@ class NavHomeView extends GetView<NavHomeController> {
                             )
                           : ListView.separated(
                               shrinkWrap: true,
-                              itemBuilder: (context, index) => _cardProject(
+                              itemBuilder: (context, index) => _cardProjectForCouple(
                                   context, controller.listBooking.value[index]),
                               separatorBuilder: (context, index) =>
                                   SizedBoxConst.size(context: context),
@@ -63,7 +63,7 @@ class NavHomeView extends GetView<NavHomeController> {
             )));
   }
 
-  Container _cardProject(BuildContext context, Booking project) {
+  Container _cardProjectForCouple(BuildContext context, Booking project) {
     return Container(
         // height: UtilsReponsive.height(100, context),
         width: double.infinity,
