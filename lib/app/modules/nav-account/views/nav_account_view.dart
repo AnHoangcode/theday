@@ -13,6 +13,7 @@ class NavAccountView extends GetView<NavAccountController> {
   const NavAccountView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    Get.find<NavAccountController>();
    return Container(
       width: double.infinity,
       height: double.infinity,
@@ -59,7 +60,7 @@ class NavAccountView extends GetView<NavAccountController> {
             SizedBoxConst.size(context: context, ),
           GestureDetector(
             onTap: () {
-              Get.offAllNamed(Routes.LOGIN);
+              controller.logout();
             },
             child: Container(
               height: UtilsReponsive.height(50, context),

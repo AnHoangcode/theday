@@ -25,7 +25,7 @@ class ApiService {
     log('StatusCode ${response.statusCode} - $apiUrl');
     log('Body ${response.body}');
 
-    final data = json.decode(response.body);
+    final data = json.decode(response.body)['data'];
     return fromJson(data);
   }
 

@@ -1,232 +1,2099 @@
 {
-  "message": "Get all bookings by couple successfully",
+  "message": "Get all bookings by supplier successfully",
   "data": [
     {
-      "id": "BOOKING-1",
       "couple": {
         "id": "COUPLE-1",
         "partnerName1": "string",
         "partnerName2": "string",
         "status": "STARTED",
-        "weddingDate": "2024-07-07",
+        "weddingDate": "2024-08-04",
         "account": {
-          "id": 4,
+          "id": 3,
           "email": "couple@gmail.com",
           "name": "COUPLE",
           "image": null,
           "phoneNumber": "0123456789",
-          "address": "string",
+          "address": "HCM",
           "status": "ACTIVATED",
           "provider": "LOCAL",
-          "role": {
-            "id": 2,
-            "name": "COUPLE"
+          "role": { "id": 4, "name": "COUPLE" }
+        }
+      },
+      "bookingDetailId": "BOOKING-DETAIL-40",
+      "serviceSupplierResponse": {
+        "id": "SERVICE-SUPPLIER-1",
+        "name": "Chụp hình giá rẻ",
+        "description": "string",
+        "rating": 0.0,
+        "listImages": ["string"],
+        "type": "LUXURY",
+        "createAt": "2024-08-04 18:21:19",
+        "price": 10000000,
+        "status": "ACTIVATED",
+        "serviceResponse": {
+          "id": "SERVICE-1",
+          "name": "NGOẠI CẢNH",
+          "description": "string",
+          "createAt": "2024-08-04 18:20:23",
+          "listImages": ["string"],
+          "categoryResponse": {
+            "id": "CATEGORY-1",
+            "categoryName": "CHỤP HÌNH",
+            "status": "ACTIVATED"
           }
         }
       },
-      "createdAt": "2024-07-29 23:50:12",
-      "completedDate": "2024-07-30",
-      "serviceBookings": [
-        {
-          "service": {
-            "id": "SERVICE-4",
-            "name": "Chụp Hình",
-            "description": "abc",
-            "type": "LUXURY",
-            "price": 2200,
-            "listImages": [],
-            "status": "ACTIVATED",
-            "categoryResponse": {
-              "id": "CATEGORY-1",
-              "categoryName": "PHOTO",
-              "status": "ACTIVATED"
-            },
-            "serviceSupplierResponse": {
-              "id": "SERVICE-SUPPLIER-1",
-              "supplierName": "string",
-              "contactPersonName": "string",
-              "contactPhone": "0123456789",
-              "contactEmail": "servicesupplier@gmail.com",
-              "status": "ACTIVATED"
-            },
-            "promotionService": null
-          },
-          "bookingPrice": 20000000
-        },
-        {
-          "service": {
-            "id": "SERVICE-2",
-            "name": "Dress services",
-            "description": "string",
-            "type": "ECONOMY",
-            "price": 1200000,
-            "listImages": [],
-            "status": "ACTIVATED",
-            "categoryResponse": {
-              "id": "CATEGORY-2",
-              "categoryName": "DRESS",
-              "status": "ACTIVATED"
-            },
-            "serviceSupplierResponse": {
-              "id": "SERVICE-SUPPLIER-1",
-              "supplierName": "string",
-              "contactPersonName": "string",
-              "contactPhone": "0123456789",
-              "contactEmail": "servicesupplier@gmail.com",
-              "status": "ACTIVATED"
-            },
-            "promotionService": null
-          },
-          "bookingPrice": 20000000
-        }
-      ],
-      "totalPrice": 40000000,
-      "status": "CONFIRM"
+      "price": 8000000,
+      "note": "NOTE",
+      "createAt": "2024-08-07 23:19:21",
+      "completedDate": "2024-09-07",
+      "status": "REJECTED",
+      "promotionResponse": {
+        "id": "PROMOTION-5",
+        "name": "Test create promotion",
+        "type": "PERCENT",
+        "value": 20,
+        "startDate": "2024-08-08",
+        "endDate": "2024-08-23",
+        "status": "ACTIVATED"
+      }
     },
     {
-      "id": "BOOKING-2",
       "couple": {
         "id": "COUPLE-1",
         "partnerName1": "string",
         "partnerName2": "string",
         "status": "STARTED",
-        "weddingDate": "2024-07-07",
+        "weddingDate": "2024-08-04",
         "account": {
-          "id": 4,
+          "id": 3,
           "email": "couple@gmail.com",
           "name": "COUPLE",
           "image": null,
           "phoneNumber": "0123456789",
-          "address": "string",
+          "address": "HCM",
           "status": "ACTIVATED",
           "provider": "LOCAL",
-          "role": {
-            "id": 2,
-            "name": "COUPLE"
+          "role": { "id": 4, "name": "COUPLE" }
+        }
+      },
+      "bookingDetailId": "BOOKING-DETAIL-39",
+      "serviceSupplierResponse": {
+        "id": "SERVICE-SUPPLIER-1",
+        "name": "Chụp hình giá rẻ",
+        "description": "string",
+        "rating": 0.0,
+        "listImages": ["string"],
+        "type": "LUXURY",
+        "createAt": "2024-08-04 18:21:19",
+        "price": 10000000,
+        "status": "ACTIVATED",
+        "serviceResponse": {
+          "id": "SERVICE-1",
+          "name": "NGOẠI CẢNH",
+          "description": "string",
+          "createAt": "2024-08-04 18:20:23",
+          "listImages": ["string"],
+          "categoryResponse": {
+            "id": "CATEGORY-1",
+            "categoryName": "CHỤP HÌNH",
+            "status": "ACTIVATED"
           }
         }
       },
-      "createdAt": "2024-07-30 00:17:56",
-      "completedDate": "2024-07-31",
-      "serviceBookings": [
-        {
-          "service": {
-            "id": "SERVICE-1",
-            "name": "string",
-            "description": "string",
-            "type": "ECONOMY",
-            "price": 200,
-            "listImages": [],
-            "status": "ACTIVATED",
-            "categoryResponse": {
-              "id": "CATEGORY-1",
-              "categoryName": "PHOTO",
-              "status": "ACTIVATED"
-            },
-            "serviceSupplierResponse": {
-              "id": "SERVICE-SUPPLIER-1",
-              "supplierName": "string",
-              "contactPersonName": "string",
-              "contactPhone": "0123456789",
-              "contactEmail": "servicesupplier@gmail.com",
-              "status": "ACTIVATED"
-            },
-            "promotionService": {
-              "id": "PROMOTION-2",
-              "promotionDetails": "string",
-              "percent": 20,
-              "startDate": "2024-07-09",
-              "endDate": "2024-08-20",
-              "status": "ACTIVATED"
-            }
-          },
-          "bookingPrice": 20000000
-        },
-        {
-          "service": {
-            "id": "SERVICE-3",
-            "name": "Chụp Hình",
-            "description": "abc",
-            "type": "ECONOMY",
-            "price": 200000,
-            "listImages": [],
-            "status": "ACTIVATED",
-            "categoryResponse": {
-              "id": "CATEGORY-1",
-              "categoryName": "PHOTO",
-              "status": "ACTIVATED"
-            },
-            "serviceSupplierResponse": {
-              "id": "SERVICE-SUPPLIER-1",
-              "supplierName": "string",
-              "contactPersonName": "string",
-              "contactPhone": "0123456789",
-              "contactEmail": "servicesupplier@gmail.com",
-              "status": "ACTIVATED"
-            },
-            "promotionService": null
-          },
-          "bookingPrice": 20000000
-        }
-      ],
-      "totalPrice": 40000000,
-      "status": "WAITING"
+      "price": 8000000,
+      "note": "NOTE",
+      "createAt": "2024-08-07 23:13:47",
+      "completedDate": "2024-09-07",
+      "status": "REJECTED",
+      "promotionResponse": {
+        "id": "PROMOTION-5",
+        "name": "Test create promotion",
+        "type": "PERCENT",
+        "value": 20,
+        "startDate": "2024-08-08",
+        "endDate": "2024-08-23",
+        "status": "ACTIVATED"
+      }
     },
     {
-      "id": "BOOKING-3",
       "couple": {
         "id": "COUPLE-1",
         "partnerName1": "string",
         "partnerName2": "string",
         "status": "STARTED",
-        "weddingDate": "2024-07-07",
+        "weddingDate": "2024-08-04",
         "account": {
-          "id": 4,
+          "id": 3,
           "email": "couple@gmail.com",
           "name": "COUPLE",
           "image": null,
           "phoneNumber": "0123456789",
-          "address": "string",
+          "address": "HCM",
           "status": "ACTIVATED",
           "provider": "LOCAL",
-          "role": {
-            "id": 2,
-            "name": "COUPLE"
+          "role": { "id": 4, "name": "COUPLE" }
+        }
+      },
+      "bookingDetailId": "BOOKING-DETAIL-37",
+      "serviceSupplierResponse": {
+        "id": "SERVICE-SUPPLIER-1",
+        "name": "Chụp hình giá rẻ",
+        "description": "string",
+        "rating": 0.0,
+        "listImages": ["string"],
+        "type": "LUXURY",
+        "createAt": "2024-08-04 18:21:19",
+        "price": 10000000,
+        "status": "ACTIVATED",
+        "serviceResponse": {
+          "id": "SERVICE-1",
+          "name": "NGOẠI CẢNH",
+          "description": "string",
+          "createAt": "2024-08-04 18:20:23",
+          "listImages": ["string"],
+          "categoryResponse": {
+            "id": "CATEGORY-1",
+            "categoryName": "CHỤP HÌNH",
+            "status": "ACTIVATED"
           }
         }
       },
-      "createdAt": "2024-07-31 19:02:58",
-      "completedDate": "2024-08-12",
-      "serviceBookings": [
-        {
-          "service": {
-            "id": "SERVICE-8",
-            "name": "Ngoại cảnh",
-            "description": "string",
-            "type": "ECONOMY",
-            "price": 10000000,
-            "listImages": [],
-            "status": "ACTIVATED",
-            "categoryResponse": {
-              "id": "CATEGORY-1",
-              "categoryName": "PHOTO",
-              "status": "ACTIVATED"
-            },
-            "serviceSupplierResponse": {
-              "id": "SERVICE-SUPPLIER-3",
-              "supplierName": "string",
-              "contactPersonName": "string",
-              "contactPhone": "0123456789",
-              "contactEmail": "cuongnht86.work@gmail.com",
-              "status": "ACTIVATED"
-            },
-            "promotionService": null
-          },
-          "bookingPrice": 10000000
+      "price": 9000000,
+      "note": "NOTE",
+      "createAt": "2024-08-07 18:07:55",
+      "completedDate": "2024-09-07",
+      "status": "COMPLETED",
+      "promotionResponse": {
+        "id": "PROMOTION-3",
+        "name": "Giảm 10%",
+        "type": "PERCENT",
+        "value": 10,
+        "startDate": "2024-08-06",
+        "endDate": "2024-08-10",
+        "status": "ACTIVATED"
+      }
+    },
+    {
+      "couple": {
+        "id": "COUPLE-1",
+        "partnerName1": "string",
+        "partnerName2": "string",
+        "status": "STARTED",
+        "weddingDate": "2024-08-04",
+        "account": {
+          "id": 3,
+          "email": "couple@gmail.com",
+          "name": "COUPLE",
+          "image": null,
+          "phoneNumber": "0123456789",
+          "address": "HCM",
+          "status": "ACTIVATED",
+          "provider": "LOCAL",
+          "role": { "id": 4, "name": "COUPLE" }
         }
-      ],
-      "totalPrice": 10000000,
-      "status": "WAITING"
+      },
+      "bookingDetailId": "BOOKING-DETAIL-38",
+      "serviceSupplierResponse": {
+        "id": "SERVICE-SUPPLIER-3",
+        "name": "string",
+        "description": "stringgggggggggggggggggg",
+        "rating": 0.0,
+        "listImages": ["string"],
+        "type": "ECONOMY",
+        "createAt": "2024-08-04 23:33:10",
+        "price": 1000000,
+        "status": "ACTIVATED",
+        "serviceResponse": {
+          "id": "SERVICE-3",
+          "name": "STUDIO",
+          "description": "string",
+          "createAt": "2024-08-04 23:31:03",
+          "listImages": ["string"],
+          "categoryResponse": {
+            "id": "CATEGORY-1",
+            "categoryName": "CHỤP HÌNH",
+            "status": "ACTIVATED"
+          }
+        }
+      },
+      "price": 1000000,
+      "note": "NOTE",
+      "createAt": "2024-08-07 18:07:55",
+      "completedDate": "2024-09-07",
+      "status": "REJECTED",
+      "promotionResponse": null
+    },
+    {
+      "couple": {
+        "id": "COUPLE-1",
+        "partnerName1": "string",
+        "partnerName2": "string",
+        "status": "STARTED",
+        "weddingDate": "2024-08-04",
+        "account": {
+          "id": 3,
+          "email": "couple@gmail.com",
+          "name": "COUPLE",
+          "image": null,
+          "phoneNumber": "0123456789",
+          "address": "HCM",
+          "status": "ACTIVATED",
+          "provider": "LOCAL",
+          "role": { "id": 4, "name": "COUPLE" }
+        }
+      },
+      "bookingDetailId": "BOOKING-DETAIL-36",
+      "serviceSupplierResponse": {
+        "id": "SERVICE-SUPPLIER-3",
+        "name": "string",
+        "description": "stringgggggggggggggggggg",
+        "rating": 0.0,
+        "listImages": ["string"],
+        "type": "ECONOMY",
+        "createAt": "2024-08-04 23:33:10",
+        "price": 1000000,
+        "status": "ACTIVATED",
+        "serviceResponse": {
+          "id": "SERVICE-3",
+          "name": "STUDIO",
+          "description": "string",
+          "createAt": "2024-08-04 23:31:03",
+          "listImages": ["string"],
+          "categoryResponse": {
+            "id": "CATEGORY-1",
+            "categoryName": "CHỤP HÌNH",
+            "status": "ACTIVATED"
+          }
+        }
+      },
+      "price": 1000000,
+      "note": "NOTE",
+      "createAt": "2024-08-07 18:03:33",
+      "completedDate": "2024-09-07",
+      "status": "APPROVED",
+      "promotionResponse": null
+    },
+    {
+      "couple": {
+        "id": "COUPLE-1",
+        "partnerName1": "string",
+        "partnerName2": "string",
+        "status": "STARTED",
+        "weddingDate": "2024-08-04",
+        "account": {
+          "id": 3,
+          "email": "couple@gmail.com",
+          "name": "COUPLE",
+          "image": null,
+          "phoneNumber": "0123456789",
+          "address": "HCM",
+          "status": "ACTIVATED",
+          "provider": "LOCAL",
+          "role": { "id": 4, "name": "COUPLE" }
+        }
+      },
+      "bookingDetailId": "BOOKING-DETAIL-35",
+      "serviceSupplierResponse": {
+        "id": "SERVICE-SUPPLIER-1",
+        "name": "Chụp hình giá rẻ",
+        "description": "string",
+        "rating": 0.0,
+        "listImages": ["string"],
+        "type": "LUXURY",
+        "createAt": "2024-08-04 18:21:19",
+        "price": 10000000,
+        "status": "ACTIVATED",
+        "serviceResponse": {
+          "id": "SERVICE-1",
+          "name": "NGOẠI CẢNH",
+          "description": "string",
+          "createAt": "2024-08-04 18:20:23",
+          "listImages": ["string"],
+          "categoryResponse": {
+            "id": "CATEGORY-1",
+            "categoryName": "CHỤP HÌNH",
+            "status": "ACTIVATED"
+          }
+        }
+      },
+      "price": 9000000,
+      "note": "NOTE",
+      "createAt": "2024-08-07 18:03:32",
+      "completedDate": "2024-09-07",
+      "status": "APPROVED",
+      "promotionResponse": {
+        "id": "PROMOTION-3",
+        "name": "Giảm 10%",
+        "type": "PERCENT",
+        "value": 10,
+        "startDate": "2024-08-06",
+        "endDate": "2024-08-10",
+        "status": "ACTIVATED"
+      }
+    },
+    {
+      "couple": {
+        "id": "COUPLE-1",
+        "partnerName1": "string",
+        "partnerName2": "string",
+        "status": "STARTED",
+        "weddingDate": "2024-08-04",
+        "account": {
+          "id": 3,
+          "email": "couple@gmail.com",
+          "name": "COUPLE",
+          "image": null,
+          "phoneNumber": "0123456789",
+          "address": "HCM",
+          "status": "ACTIVATED",
+          "provider": "LOCAL",
+          "role": { "id": 4, "name": "COUPLE" }
+        }
+      },
+      "bookingDetailId": "BOOKING-DETAIL-34",
+      "serviceSupplierResponse": {
+        "id": "SERVICE-SUPPLIER-3",
+        "name": "string",
+        "description": "stringgggggggggggggggggg",
+        "rating": 0.0,
+        "listImages": ["string"],
+        "type": "ECONOMY",
+        "createAt": "2024-08-04 23:33:10",
+        "price": 1000000,
+        "status": "ACTIVATED",
+        "serviceResponse": {
+          "id": "SERVICE-3",
+          "name": "STUDIO",
+          "description": "string",
+          "createAt": "2024-08-04 23:31:03",
+          "listImages": ["string"],
+          "categoryResponse": {
+            "id": "CATEGORY-1",
+            "categoryName": "CHỤP HÌNH",
+            "status": "ACTIVATED"
+          }
+        }
+      },
+      "price": 1000000,
+      "note": "NOTE",
+      "createAt": "2024-08-07 18:01:45",
+      "completedDate": "2024-09-07",
+      "status": "REJECTED",
+      "promotionResponse": null
+    },
+    {
+      "couple": {
+        "id": "COUPLE-1",
+        "partnerName1": "string",
+        "partnerName2": "string",
+        "status": "STARTED",
+        "weddingDate": "2024-08-04",
+        "account": {
+          "id": 3,
+          "email": "couple@gmail.com",
+          "name": "COUPLE",
+          "image": null,
+          "phoneNumber": "0123456789",
+          "address": "HCM",
+          "status": "ACTIVATED",
+          "provider": "LOCAL",
+          "role": { "id": 4, "name": "COUPLE" }
+        }
+      },
+      "bookingDetailId": "BOOKING-DETAIL-33",
+      "serviceSupplierResponse": {
+        "id": "SERVICE-SUPPLIER-1",
+        "name": "Chụp hình giá rẻ",
+        "description": "string",
+        "rating": 0.0,
+        "listImages": ["string"],
+        "type": "LUXURY",
+        "createAt": "2024-08-04 18:21:19",
+        "price": 10000000,
+        "status": "ACTIVATED",
+        "serviceResponse": {
+          "id": "SERVICE-1",
+          "name": "NGOẠI CẢNH",
+          "description": "string",
+          "createAt": "2024-08-04 18:20:23",
+          "listImages": ["string"],
+          "categoryResponse": {
+            "id": "CATEGORY-1",
+            "categoryName": "CHỤP HÌNH",
+            "status": "ACTIVATED"
+          }
+        }
+      },
+      "price": 9000000,
+      "note": "NOTE",
+      "createAt": "2024-08-07 18:01:44",
+      "completedDate": "2024-09-07",
+      "status": "REJECTED",
+      "promotionResponse": {
+        "id": "PROMOTION-3",
+        "name": "Giảm 10%",
+        "type": "PERCENT",
+        "value": 10,
+        "startDate": "2024-08-06",
+        "endDate": "2024-08-10",
+        "status": "ACTIVATED"
+      }
+    },
+    {
+      "couple": {
+        "id": "COUPLE-1",
+        "partnerName1": "string",
+        "partnerName2": "string",
+        "status": "STARTED",
+        "weddingDate": "2024-08-04",
+        "account": {
+          "id": 3,
+          "email": "couple@gmail.com",
+          "name": "COUPLE",
+          "image": null,
+          "phoneNumber": "0123456789",
+          "address": "HCM",
+          "status": "ACTIVATED",
+          "provider": "LOCAL",
+          "role": { "id": 4, "name": "COUPLE" }
+        }
+      },
+      "bookingDetailId": "BOOKING-DETAIL-32",
+      "serviceSupplierResponse": {
+        "id": "SERVICE-SUPPLIER-3",
+        "name": "string",
+        "description": "stringgggggggggggggggggg",
+        "rating": 0.0,
+        "listImages": ["string"],
+        "type": "ECONOMY",
+        "createAt": "2024-08-04 23:33:10",
+        "price": 1000000,
+        "status": "ACTIVATED",
+        "serviceResponse": {
+          "id": "SERVICE-3",
+          "name": "STUDIO",
+          "description": "string",
+          "createAt": "2024-08-04 23:31:03",
+          "listImages": ["string"],
+          "categoryResponse": {
+            "id": "CATEGORY-1",
+            "categoryName": "CHỤP HÌNH",
+            "status": "ACTIVATED"
+          }
+        }
+      },
+      "price": 1000000,
+      "note": "NOTE",
+      "createAt": "2024-08-07 17:59:22",
+      "completedDate": "2024-09-07",
+      "status": "REJECTED",
+      "promotionResponse": null
+    },
+    {
+      "couple": {
+        "id": "COUPLE-1",
+        "partnerName1": "string",
+        "partnerName2": "string",
+        "status": "STARTED",
+        "weddingDate": "2024-08-04",
+        "account": {
+          "id": 3,
+          "email": "couple@gmail.com",
+          "name": "COUPLE",
+          "image": null,
+          "phoneNumber": "0123456789",
+          "address": "HCM",
+          "status": "ACTIVATED",
+          "provider": "LOCAL",
+          "role": { "id": 4, "name": "COUPLE" }
+        }
+      },
+      "bookingDetailId": "BOOKING-DETAIL-31",
+      "serviceSupplierResponse": {
+        "id": "SERVICE-SUPPLIER-1",
+        "name": "Chụp hình giá rẻ",
+        "description": "string",
+        "rating": 0.0,
+        "listImages": ["string"],
+        "type": "LUXURY",
+        "createAt": "2024-08-04 18:21:19",
+        "price": 10000000,
+        "status": "ACTIVATED",
+        "serviceResponse": {
+          "id": "SERVICE-1",
+          "name": "NGOẠI CẢNH",
+          "description": "string",
+          "createAt": "2024-08-04 18:20:23",
+          "listImages": ["string"],
+          "categoryResponse": {
+            "id": "CATEGORY-1",
+            "categoryName": "CHỤP HÌNH",
+            "status": "ACTIVATED"
+          }
+        }
+      },
+      "price": 9000000,
+      "note": "NOTE",
+      "createAt": "2024-08-07 17:59:21",
+      "completedDate": "2024-09-07",
+      "status": "APPROVED",
+      "promotionResponse": {
+        "id": "PROMOTION-3",
+        "name": "Giảm 10%",
+        "type": "PERCENT",
+        "value": 10,
+        "startDate": "2024-08-06",
+        "endDate": "2024-08-10",
+        "status": "ACTIVATED"
+      }
+    },
+    {
+      "couple": {
+        "id": "COUPLE-1",
+        "partnerName1": "string",
+        "partnerName2": "string",
+        "status": "STARTED",
+        "weddingDate": "2024-08-04",
+        "account": {
+          "id": 3,
+          "email": "couple@gmail.com",
+          "name": "COUPLE",
+          "image": null,
+          "phoneNumber": "0123456789",
+          "address": "HCM",
+          "status": "ACTIVATED",
+          "provider": "LOCAL",
+          "role": { "id": 4, "name": "COUPLE" }
+        }
+      },
+      "bookingDetailId": "BOOKING-DETAIL-29",
+      "serviceSupplierResponse": {
+        "id": "SERVICE-SUPPLIER-1",
+        "name": "Chụp hình giá rẻ",
+        "description": "string",
+        "rating": 0.0,
+        "listImages": ["string"],
+        "type": "LUXURY",
+        "createAt": "2024-08-04 18:21:19",
+        "price": 10000000,
+        "status": "ACTIVATED",
+        "serviceResponse": {
+          "id": "SERVICE-1",
+          "name": "NGOẠI CẢNH",
+          "description": "string",
+          "createAt": "2024-08-04 18:20:23",
+          "listImages": ["string"],
+          "categoryResponse": {
+            "id": "CATEGORY-1",
+            "categoryName": "CHỤP HÌNH",
+            "status": "ACTIVATED"
+          }
+        }
+      },
+      "price": 9000000,
+      "note": "NOTE",
+      "createAt": "2024-08-07 17:54:55",
+      "completedDate": "2024-09-07",
+      "status": "PENDING",
+      "promotionResponse": {
+        "id": "PROMOTION-3",
+        "name": "Giảm 10%",
+        "type": "PERCENT",
+        "value": 10,
+        "startDate": "2024-08-06",
+        "endDate": "2024-08-10",
+        "status": "ACTIVATED"
+      }
+    },
+    {
+      "couple": {
+        "id": "COUPLE-1",
+        "partnerName1": "string",
+        "partnerName2": "string",
+        "status": "STARTED",
+        "weddingDate": "2024-08-04",
+        "account": {
+          "id": 3,
+          "email": "couple@gmail.com",
+          "name": "COUPLE",
+          "image": null,
+          "phoneNumber": "0123456789",
+          "address": "HCM",
+          "status": "ACTIVATED",
+          "provider": "LOCAL",
+          "role": { "id": 4, "name": "COUPLE" }
+        }
+      },
+      "bookingDetailId": "BOOKING-DETAIL-30",
+      "serviceSupplierResponse": {
+        "id": "SERVICE-SUPPLIER-3",
+        "name": "string",
+        "description": "stringgggggggggggggggggg",
+        "rating": 0.0,
+        "listImages": ["string"],
+        "type": "ECONOMY",
+        "createAt": "2024-08-04 23:33:10",
+        "price": 1000000,
+        "status": "ACTIVATED",
+        "serviceResponse": {
+          "id": "SERVICE-3",
+          "name": "STUDIO",
+          "description": "string",
+          "createAt": "2024-08-04 23:31:03",
+          "listImages": ["string"],
+          "categoryResponse": {
+            "id": "CATEGORY-1",
+            "categoryName": "CHỤP HÌNH",
+            "status": "ACTIVATED"
+          }
+        }
+      },
+      "price": 1000000,
+      "note": "NOTE",
+      "createAt": "2024-08-07 17:54:55",
+      "completedDate": "2024-09-07",
+      "status": "APPROVED",
+      "promotionResponse": null
+    },
+    {
+      "couple": {
+        "id": "COUPLE-1",
+        "partnerName1": "string",
+        "partnerName2": "string",
+        "status": "STARTED",
+        "weddingDate": "2024-08-04",
+        "account": {
+          "id": 3,
+          "email": "couple@gmail.com",
+          "name": "COUPLE",
+          "image": null,
+          "phoneNumber": "0123456789",
+          "address": "HCM",
+          "status": "ACTIVATED",
+          "provider": "LOCAL",
+          "role": { "id": 4, "name": "COUPLE" }
+        }
+      },
+      "bookingDetailId": "BOOKING-DETAIL-28",
+      "serviceSupplierResponse": {
+        "id": "SERVICE-SUPPLIER-3",
+        "name": "string",
+        "description": "stringgggggggggggggggggg",
+        "rating": 0.0,
+        "listImages": ["string"],
+        "type": "ECONOMY",
+        "createAt": "2024-08-04 23:33:10",
+        "price": 1000000,
+        "status": "ACTIVATED",
+        "serviceResponse": {
+          "id": "SERVICE-3",
+          "name": "STUDIO",
+          "description": "string",
+          "createAt": "2024-08-04 23:31:03",
+          "listImages": ["string"],
+          "categoryResponse": {
+            "id": "CATEGORY-1",
+            "categoryName": "CHỤP HÌNH",
+            "status": "ACTIVATED"
+          }
+        }
+      },
+      "price": 1000000,
+      "note": "NOTE",
+      "createAt": "2024-08-07 17:53:11",
+      "completedDate": "2024-09-07",
+      "status": "PENDING",
+      "promotionResponse": null
+    },
+    {
+      "couple": {
+        "id": "COUPLE-1",
+        "partnerName1": "string",
+        "partnerName2": "string",
+        "status": "STARTED",
+        "weddingDate": "2024-08-04",
+        "account": {
+          "id": 3,
+          "email": "couple@gmail.com",
+          "name": "COUPLE",
+          "image": null,
+          "phoneNumber": "0123456789",
+          "address": "HCM",
+          "status": "ACTIVATED",
+          "provider": "LOCAL",
+          "role": { "id": 4, "name": "COUPLE" }
+        }
+      },
+      "bookingDetailId": "BOOKING-DETAIL-27",
+      "serviceSupplierResponse": {
+        "id": "SERVICE-SUPPLIER-1",
+        "name": "Chụp hình giá rẻ",
+        "description": "string",
+        "rating": 0.0,
+        "listImages": ["string"],
+        "type": "LUXURY",
+        "createAt": "2024-08-04 18:21:19",
+        "price": 10000000,
+        "status": "ACTIVATED",
+        "serviceResponse": {
+          "id": "SERVICE-1",
+          "name": "NGOẠI CẢNH",
+          "description": "string",
+          "createAt": "2024-08-04 18:20:23",
+          "listImages": ["string"],
+          "categoryResponse": {
+            "id": "CATEGORY-1",
+            "categoryName": "CHỤP HÌNH",
+            "status": "ACTIVATED"
+          }
+        }
+      },
+      "price": 9000000,
+      "note": "NOTE",
+      "createAt": "2024-08-07 17:53:10",
+      "completedDate": "2024-09-07",
+      "status": "PENDING",
+      "promotionResponse": {
+        "id": "PROMOTION-3",
+        "name": "Giảm 10%",
+        "type": "PERCENT",
+        "value": 10,
+        "startDate": "2024-08-06",
+        "endDate": "2024-08-10",
+        "status": "ACTIVATED"
+      }
+    },
+    {
+      "couple": {
+        "id": "COUPLE-1",
+        "partnerName1": "string",
+        "partnerName2": "string",
+        "status": "STARTED",
+        "weddingDate": "2024-08-04",
+        "account": {
+          "id": 3,
+          "email": "couple@gmail.com",
+          "name": "COUPLE",
+          "image": null,
+          "phoneNumber": "0123456789",
+          "address": "HCM",
+          "status": "ACTIVATED",
+          "provider": "LOCAL",
+          "role": { "id": 4, "name": "COUPLE" }
+        }
+      },
+      "bookingDetailId": "BOOKING-DETAIL-25",
+      "serviceSupplierResponse": {
+        "id": "SERVICE-SUPPLIER-1",
+        "name": "Chụp hình giá rẻ",
+        "description": "string",
+        "rating": 0.0,
+        "listImages": ["string"],
+        "type": "LUXURY",
+        "createAt": "2024-08-04 18:21:19",
+        "price": 10000000,
+        "status": "ACTIVATED",
+        "serviceResponse": {
+          "id": "SERVICE-1",
+          "name": "NGOẠI CẢNH",
+          "description": "string",
+          "createAt": "2024-08-04 18:20:23",
+          "listImages": ["string"],
+          "categoryResponse": {
+            "id": "CATEGORY-1",
+            "categoryName": "CHỤP HÌNH",
+            "status": "ACTIVATED"
+          }
+        }
+      },
+      "price": 9000000,
+      "note": "NOTE",
+      "createAt": "2024-08-07 17:48:44",
+      "completedDate": "2024-09-07",
+      "status": "REJECTED",
+      "promotionResponse": {
+        "id": "PROMOTION-3",
+        "name": "Giảm 10%",
+        "type": "PERCENT",
+        "value": 10,
+        "startDate": "2024-08-06",
+        "endDate": "2024-08-10",
+        "status": "ACTIVATED"
+      }
+    },
+    {
+      "couple": {
+        "id": "COUPLE-1",
+        "partnerName1": "string",
+        "partnerName2": "string",
+        "status": "STARTED",
+        "weddingDate": "2024-08-04",
+        "account": {
+          "id": 3,
+          "email": "couple@gmail.com",
+          "name": "COUPLE",
+          "image": null,
+          "phoneNumber": "0123456789",
+          "address": "HCM",
+          "status": "ACTIVATED",
+          "provider": "LOCAL",
+          "role": { "id": 4, "name": "COUPLE" }
+        }
+      },
+      "bookingDetailId": "BOOKING-DETAIL-26",
+      "serviceSupplierResponse": {
+        "id": "SERVICE-SUPPLIER-3",
+        "name": "string",
+        "description": "stringgggggggggggggggggg",
+        "rating": 0.0,
+        "listImages": ["string"],
+        "type": "ECONOMY",
+        "createAt": "2024-08-04 23:33:10",
+        "price": 1000000,
+        "status": "ACTIVATED",
+        "serviceResponse": {
+          "id": "SERVICE-3",
+          "name": "STUDIO",
+          "description": "string",
+          "createAt": "2024-08-04 23:31:03",
+          "listImages": ["string"],
+          "categoryResponse": {
+            "id": "CATEGORY-1",
+            "categoryName": "CHỤP HÌNH",
+            "status": "ACTIVATED"
+          }
+        }
+      },
+      "price": 1000000,
+      "note": "NOTE",
+      "createAt": "2024-08-07 17:48:44",
+      "completedDate": "2024-09-07",
+      "status": "APPROVED",
+      "promotionResponse": null
+    },
+    {
+      "couple": {
+        "id": "COUPLE-1",
+        "partnerName1": "string",
+        "partnerName2": "string",
+        "status": "STARTED",
+        "weddingDate": "2024-08-04",
+        "account": {
+          "id": 3,
+          "email": "couple@gmail.com",
+          "name": "COUPLE",
+          "image": null,
+          "phoneNumber": "0123456789",
+          "address": "HCM",
+          "status": "ACTIVATED",
+          "provider": "LOCAL",
+          "role": { "id": 4, "name": "COUPLE" }
+        }
+      },
+      "bookingDetailId": "BOOKING-DETAIL-23",
+      "serviceSupplierResponse": {
+        "id": "SERVICE-SUPPLIER-1",
+        "name": "Chụp hình giá rẻ",
+        "description": "string",
+        "rating": 0.0,
+        "listImages": ["string"],
+        "type": "LUXURY",
+        "createAt": "2024-08-04 18:21:19",
+        "price": 10000000,
+        "status": "ACTIVATED",
+        "serviceResponse": {
+          "id": "SERVICE-1",
+          "name": "NGOẠI CẢNH",
+          "description": "string",
+          "createAt": "2024-08-04 18:20:23",
+          "listImages": ["string"],
+          "categoryResponse": {
+            "id": "CATEGORY-1",
+            "categoryName": "CHỤP HÌNH",
+            "status": "ACTIVATED"
+          }
+        }
+      },
+      "price": 9000000,
+      "note": "NOTE",
+      "createAt": "2024-08-07 17:44:01",
+      "completedDate": "2024-09-07",
+      "status": "PENDING",
+      "promotionResponse": {
+        "id": "PROMOTION-3",
+        "name": "Giảm 10%",
+        "type": "PERCENT",
+        "value": 10,
+        "startDate": "2024-08-06",
+        "endDate": "2024-08-10",
+        "status": "ACTIVATED"
+      }
+    },
+    {
+      "couple": {
+        "id": "COUPLE-1",
+        "partnerName1": "string",
+        "partnerName2": "string",
+        "status": "STARTED",
+        "weddingDate": "2024-08-04",
+        "account": {
+          "id": 3,
+          "email": "couple@gmail.com",
+          "name": "COUPLE",
+          "image": null,
+          "phoneNumber": "0123456789",
+          "address": "HCM",
+          "status": "ACTIVATED",
+          "provider": "LOCAL",
+          "role": { "id": 4, "name": "COUPLE" }
+        }
+      },
+      "bookingDetailId": "BOOKING-DETAIL-24",
+      "serviceSupplierResponse": {
+        "id": "SERVICE-SUPPLIER-3",
+        "name": "string",
+        "description": "stringgggggggggggggggggg",
+        "rating": 0.0,
+        "listImages": ["string"],
+        "type": "ECONOMY",
+        "createAt": "2024-08-04 23:33:10",
+        "price": 1000000,
+        "status": "ACTIVATED",
+        "serviceResponse": {
+          "id": "SERVICE-3",
+          "name": "STUDIO",
+          "description": "string",
+          "createAt": "2024-08-04 23:31:03",
+          "listImages": ["string"],
+          "categoryResponse": {
+            "id": "CATEGORY-1",
+            "categoryName": "CHỤP HÌNH",
+            "status": "ACTIVATED"
+          }
+        }
+      },
+      "price": 1000000,
+      "note": "NOTE",
+      "createAt": "2024-08-07 17:44:01",
+      "completedDate": "2024-09-07",
+      "status": "PENDING",
+      "promotionResponse": null
+    },
+    {
+      "couple": {
+        "id": "COUPLE-1",
+        "partnerName1": "string",
+        "partnerName2": "string",
+        "status": "STARTED",
+        "weddingDate": "2024-08-04",
+        "account": {
+          "id": 3,
+          "email": "couple@gmail.com",
+          "name": "COUPLE",
+          "image": null,
+          "phoneNumber": "0123456789",
+          "address": "HCM",
+          "status": "ACTIVATED",
+          "provider": "LOCAL",
+          "role": { "id": 4, "name": "COUPLE" }
+        }
+      },
+      "bookingDetailId": "BOOKING-DETAIL-21",
+      "serviceSupplierResponse": {
+        "id": "SERVICE-SUPPLIER-1",
+        "name": "Chụp hình giá rẻ",
+        "description": "string",
+        "rating": 0.0,
+        "listImages": ["string"],
+        "type": "LUXURY",
+        "createAt": "2024-08-04 18:21:19",
+        "price": 10000000,
+        "status": "ACTIVATED",
+        "serviceResponse": {
+          "id": "SERVICE-1",
+          "name": "NGOẠI CẢNH",
+          "description": "string",
+          "createAt": "2024-08-04 18:20:23",
+          "listImages": ["string"],
+          "categoryResponse": {
+            "id": "CATEGORY-1",
+            "categoryName": "CHỤP HÌNH",
+            "status": "ACTIVATED"
+          }
+        }
+      },
+      "price": 9000000,
+      "note": "NOTE",
+      "createAt": "2024-08-07 17:41:09",
+      "completedDate": "2024-09-07",
+      "status": "PENDING",
+      "promotionResponse": {
+        "id": "PROMOTION-3",
+        "name": "Giảm 10%",
+        "type": "PERCENT",
+        "value": 10,
+        "startDate": "2024-08-06",
+        "endDate": "2024-08-10",
+        "status": "ACTIVATED"
+      }
+    },
+    {
+      "couple": {
+        "id": "COUPLE-1",
+        "partnerName1": "string",
+        "partnerName2": "string",
+        "status": "STARTED",
+        "weddingDate": "2024-08-04",
+        "account": {
+          "id": 3,
+          "email": "couple@gmail.com",
+          "name": "COUPLE",
+          "image": null,
+          "phoneNumber": "0123456789",
+          "address": "HCM",
+          "status": "ACTIVATED",
+          "provider": "LOCAL",
+          "role": { "id": 4, "name": "COUPLE" }
+        }
+      },
+      "bookingDetailId": "BOOKING-DETAIL-22",
+      "serviceSupplierResponse": {
+        "id": "SERVICE-SUPPLIER-3",
+        "name": "string",
+        "description": "stringgggggggggggggggggg",
+        "rating": 0.0,
+        "listImages": ["string"],
+        "type": "ECONOMY",
+        "createAt": "2024-08-04 23:33:10",
+        "price": 1000000,
+        "status": "ACTIVATED",
+        "serviceResponse": {
+          "id": "SERVICE-3",
+          "name": "STUDIO",
+          "description": "string",
+          "createAt": "2024-08-04 23:31:03",
+          "listImages": ["string"],
+          "categoryResponse": {
+            "id": "CATEGORY-1",
+            "categoryName": "CHỤP HÌNH",
+            "status": "ACTIVATED"
+          }
+        }
+      },
+      "price": 1000000,
+      "note": "NOTE",
+      "createAt": "2024-08-07 17:41:09",
+      "completedDate": "2024-09-07",
+      "status": "APPROVED",
+      "promotionResponse": null
+    },
+    {
+      "couple": {
+        "id": "COUPLE-1",
+        "partnerName1": "string",
+        "partnerName2": "string",
+        "status": "STARTED",
+        "weddingDate": "2024-08-04",
+        "account": {
+          "id": 3,
+          "email": "couple@gmail.com",
+          "name": "COUPLE",
+          "image": null,
+          "phoneNumber": "0123456789",
+          "address": "HCM",
+          "status": "ACTIVATED",
+          "provider": "LOCAL",
+          "role": { "id": 4, "name": "COUPLE" }
+        }
+      },
+      "bookingDetailId": "BOOKING-DETAIL-19",
+      "serviceSupplierResponse": {
+        "id": "SERVICE-SUPPLIER-1",
+        "name": "Chụp hình giá rẻ",
+        "description": "string",
+        "rating": 0.0,
+        "listImages": ["string"],
+        "type": "LUXURY",
+        "createAt": "2024-08-04 18:21:19",
+        "price": 10000000,
+        "status": "ACTIVATED",
+        "serviceResponse": {
+          "id": "SERVICE-1",
+          "name": "NGOẠI CẢNH",
+          "description": "string",
+          "createAt": "2024-08-04 18:20:23",
+          "listImages": ["string"],
+          "categoryResponse": {
+            "id": "CATEGORY-1",
+            "categoryName": "CHỤP HÌNH",
+            "status": "ACTIVATED"
+          }
+        }
+      },
+      "price": 9000000,
+      "note": "NOTE",
+      "createAt": "2024-08-07 17:39:16",
+      "completedDate": "2024-09-07",
+      "status": "PENDING",
+      "promotionResponse": {
+        "id": "PROMOTION-3",
+        "name": "Giảm 10%",
+        "type": "PERCENT",
+        "value": 10,
+        "startDate": "2024-08-06",
+        "endDate": "2024-08-10",
+        "status": "ACTIVATED"
+      }
+    },
+    {
+      "couple": {
+        "id": "COUPLE-1",
+        "partnerName1": "string",
+        "partnerName2": "string",
+        "status": "STARTED",
+        "weddingDate": "2024-08-04",
+        "account": {
+          "id": 3,
+          "email": "couple@gmail.com",
+          "name": "COUPLE",
+          "image": null,
+          "phoneNumber": "0123456789",
+          "address": "HCM",
+          "status": "ACTIVATED",
+          "provider": "LOCAL",
+          "role": { "id": 4, "name": "COUPLE" }
+        }
+      },
+      "bookingDetailId": "BOOKING-DETAIL-20",
+      "serviceSupplierResponse": {
+        "id": "SERVICE-SUPPLIER-3",
+        "name": "string",
+        "description": "stringgggggggggggggggggg",
+        "rating": 0.0,
+        "listImages": ["string"],
+        "type": "ECONOMY",
+        "createAt": "2024-08-04 23:33:10",
+        "price": 1000000,
+        "status": "ACTIVATED",
+        "serviceResponse": {
+          "id": "SERVICE-3",
+          "name": "STUDIO",
+          "description": "string",
+          "createAt": "2024-08-04 23:31:03",
+          "listImages": ["string"],
+          "categoryResponse": {
+            "id": "CATEGORY-1",
+            "categoryName": "CHỤP HÌNH",
+            "status": "ACTIVATED"
+          }
+        }
+      },
+      "price": 1000000,
+      "note": "NOTE",
+      "createAt": "2024-08-07 17:39:16",
+      "completedDate": "2024-09-07",
+      "status": "CANCELLED",
+      "promotionResponse": null
+    },
+    {
+      "couple": {
+        "id": "COUPLE-1",
+        "partnerName1": "string",
+        "partnerName2": "string",
+        "status": "STARTED",
+        "weddingDate": "2024-08-04",
+        "account": {
+          "id": 3,
+          "email": "couple@gmail.com",
+          "name": "COUPLE",
+          "image": null,
+          "phoneNumber": "0123456789",
+          "address": "HCM",
+          "status": "ACTIVATED",
+          "provider": "LOCAL",
+          "role": { "id": 4, "name": "COUPLE" }
+        }
+      },
+      "bookingDetailId": "BOOKING-DETAIL-18",
+      "serviceSupplierResponse": {
+        "id": "SERVICE-SUPPLIER-3",
+        "name": "string",
+        "description": "stringgggggggggggggggggg",
+        "rating": 0.0,
+        "listImages": ["string"],
+        "type": "ECONOMY",
+        "createAt": "2024-08-04 23:33:10",
+        "price": 1000000,
+        "status": "ACTIVATED",
+        "serviceResponse": {
+          "id": "SERVICE-3",
+          "name": "STUDIO",
+          "description": "string",
+          "createAt": "2024-08-04 23:31:03",
+          "listImages": ["string"],
+          "categoryResponse": {
+            "id": "CATEGORY-1",
+            "categoryName": "CHỤP HÌNH",
+            "status": "ACTIVATED"
+          }
+        }
+      },
+      "price": 1000000,
+      "note": "NOTE",
+      "createAt": "2024-08-07 17:35:36",
+      "completedDate": "2024-09-07",
+      "status": "COMPLETED",
+      "promotionResponse": null
+    },
+    {
+      "couple": {
+        "id": "COUPLE-1",
+        "partnerName1": "string",
+        "partnerName2": "string",
+        "status": "STARTED",
+        "weddingDate": "2024-08-04",
+        "account": {
+          "id": 3,
+          "email": "couple@gmail.com",
+          "name": "COUPLE",
+          "image": null,
+          "phoneNumber": "0123456789",
+          "address": "HCM",
+          "status": "ACTIVATED",
+          "provider": "LOCAL",
+          "role": { "id": 4, "name": "COUPLE" }
+        }
+      },
+      "bookingDetailId": "BOOKING-DETAIL-17",
+      "serviceSupplierResponse": {
+        "id": "SERVICE-SUPPLIER-1",
+        "name": "Chụp hình giá rẻ",
+        "description": "string",
+        "rating": 0.0,
+        "listImages": ["string"],
+        "type": "LUXURY",
+        "createAt": "2024-08-04 18:21:19",
+        "price": 10000000,
+        "status": "ACTIVATED",
+        "serviceResponse": {
+          "id": "SERVICE-1",
+          "name": "NGOẠI CẢNH",
+          "description": "string",
+          "createAt": "2024-08-04 18:20:23",
+          "listImages": ["string"],
+          "categoryResponse": {
+            "id": "CATEGORY-1",
+            "categoryName": "CHỤP HÌNH",
+            "status": "ACTIVATED"
+          }
+        }
+      },
+      "price": 9000000,
+      "note": "NOTE",
+      "createAt": "2024-08-07 17:35:35",
+      "completedDate": "2024-09-07",
+      "status": "COMPLETED",
+      "promotionResponse": {
+        "id": "PROMOTION-3",
+        "name": "Giảm 10%",
+        "type": "PERCENT",
+        "value": 10,
+        "startDate": "2024-08-06",
+        "endDate": "2024-08-10",
+        "status": "ACTIVATED"
+      }
+    },
+    {
+      "couple": {
+        "id": "COUPLE-1",
+        "partnerName1": "string",
+        "partnerName2": "string",
+        "status": "STARTED",
+        "weddingDate": "2024-08-04",
+        "account": {
+          "id": 3,
+          "email": "couple@gmail.com",
+          "name": "COUPLE",
+          "image": null,
+          "phoneNumber": "0123456789",
+          "address": "HCM",
+          "status": "ACTIVATED",
+          "provider": "LOCAL",
+          "role": { "id": 4, "name": "COUPLE" }
+        }
+      },
+      "bookingDetailId": "BOOKING-DETAIL-16",
+      "serviceSupplierResponse": {
+        "id": "SERVICE-SUPPLIER-3",
+        "name": "string",
+        "description": "stringgggggggggggggggggg",
+        "rating": 0.0,
+        "listImages": ["string"],
+        "type": "ECONOMY",
+        "createAt": "2024-08-04 23:33:10",
+        "price": 1000000,
+        "status": "ACTIVATED",
+        "serviceResponse": {
+          "id": "SERVICE-3",
+          "name": "STUDIO",
+          "description": "string",
+          "createAt": "2024-08-04 23:31:03",
+          "listImages": ["string"],
+          "categoryResponse": {
+            "id": "CATEGORY-1",
+            "categoryName": "CHỤP HÌNH",
+            "status": "ACTIVATED"
+          }
+        }
+      },
+      "price": 1000000,
+      "note": "NOTE",
+      "createAt": "2024-08-07 17:28:55",
+      "completedDate": "2024-09-07",
+      "status": "PENDING",
+      "promotionResponse": null
+    },
+    {
+      "couple": {
+        "id": "COUPLE-1",
+        "partnerName1": "string",
+        "partnerName2": "string",
+        "status": "STARTED",
+        "weddingDate": "2024-08-04",
+        "account": {
+          "id": 3,
+          "email": "couple@gmail.com",
+          "name": "COUPLE",
+          "image": null,
+          "phoneNumber": "0123456789",
+          "address": "HCM",
+          "status": "ACTIVATED",
+          "provider": "LOCAL",
+          "role": { "id": 4, "name": "COUPLE" }
+        }
+      },
+      "bookingDetailId": "BOOKING-DETAIL-15",
+      "serviceSupplierResponse": {
+        "id": "SERVICE-SUPPLIER-1",
+        "name": "Chụp hình giá rẻ",
+        "description": "string",
+        "rating": 0.0,
+        "listImages": ["string"],
+        "type": "LUXURY",
+        "createAt": "2024-08-04 18:21:19",
+        "price": 10000000,
+        "status": "ACTIVATED",
+        "serviceResponse": {
+          "id": "SERVICE-1",
+          "name": "NGOẠI CẢNH",
+          "description": "string",
+          "createAt": "2024-08-04 18:20:23",
+          "listImages": ["string"],
+          "categoryResponse": {
+            "id": "CATEGORY-1",
+            "categoryName": "CHỤP HÌNH",
+            "status": "ACTIVATED"
+          }
+        }
+      },
+      "price": 9000000,
+      "note": "NOTE",
+      "createAt": "2024-08-07 17:28:54",
+      "completedDate": "2024-09-07",
+      "status": "PENDING",
+      "promotionResponse": {
+        "id": "PROMOTION-3",
+        "name": "Giảm 10%",
+        "type": "PERCENT",
+        "value": 10,
+        "startDate": "2024-08-06",
+        "endDate": "2024-08-10",
+        "status": "ACTIVATED"
+      }
+    },
+    {
+      "couple": {
+        "id": "COUPLE-1",
+        "partnerName1": "string",
+        "partnerName2": "string",
+        "status": "STARTED",
+        "weddingDate": "2024-08-04",
+        "account": {
+          "id": 3,
+          "email": "couple@gmail.com",
+          "name": "COUPLE",
+          "image": null,
+          "phoneNumber": "0123456789",
+          "address": "HCM",
+          "status": "ACTIVATED",
+          "provider": "LOCAL",
+          "role": { "id": 4, "name": "COUPLE" }
+        }
+      },
+      "bookingDetailId": "BOOKING-DETAIL-14",
+      "serviceSupplierResponse": {
+        "id": "SERVICE-SUPPLIER-3",
+        "name": "string",
+        "description": "stringgggggggggggggggggg",
+        "rating": 0.0,
+        "listImages": ["string"],
+        "type": "ECONOMY",
+        "createAt": "2024-08-04 23:33:10",
+        "price": 1000000,
+        "status": "ACTIVATED",
+        "serviceResponse": {
+          "id": "SERVICE-3",
+          "name": "STUDIO",
+          "description": "string",
+          "createAt": "2024-08-04 23:31:03",
+          "listImages": ["string"],
+          "categoryResponse": {
+            "id": "CATEGORY-1",
+            "categoryName": "CHỤP HÌNH",
+            "status": "ACTIVATED"
+          }
+        }
+      },
+      "price": 1000000,
+      "note": "NOTE",
+      "createAt": "2024-08-07 17:26:00",
+      "completedDate": "2024-09-07",
+      "status": "PENDING",
+      "promotionResponse": null
+    },
+    {
+      "couple": {
+        "id": "COUPLE-1",
+        "partnerName1": "string",
+        "partnerName2": "string",
+        "status": "STARTED",
+        "weddingDate": "2024-08-04",
+        "account": {
+          "id": 3,
+          "email": "couple@gmail.com",
+          "name": "COUPLE",
+          "image": null,
+          "phoneNumber": "0123456789",
+          "address": "HCM",
+          "status": "ACTIVATED",
+          "provider": "LOCAL",
+          "role": { "id": 4, "name": "COUPLE" }
+        }
+      },
+      "bookingDetailId": "BOOKING-DETAIL-13",
+      "serviceSupplierResponse": {
+        "id": "SERVICE-SUPPLIER-1",
+        "name": "Chụp hình giá rẻ",
+        "description": "string",
+        "rating": 0.0,
+        "listImages": ["string"],
+        "type": "LUXURY",
+        "createAt": "2024-08-04 18:21:19",
+        "price": 10000000,
+        "status": "ACTIVATED",
+        "serviceResponse": {
+          "id": "SERVICE-1",
+          "name": "NGOẠI CẢNH",
+          "description": "string",
+          "createAt": "2024-08-04 18:20:23",
+          "listImages": ["string"],
+          "categoryResponse": {
+            "id": "CATEGORY-1",
+            "categoryName": "CHỤP HÌNH",
+            "status": "ACTIVATED"
+          }
+        }
+      },
+      "price": 9000000,
+      "note": "NOTE",
+      "createAt": "2024-08-07 17:26:00",
+      "completedDate": "2024-09-07",
+      "status": "PENDING",
+      "promotionResponse": {
+        "id": "PROMOTION-3",
+        "name": "Giảm 10%",
+        "type": "PERCENT",
+        "value": 10,
+        "startDate": "2024-08-06",
+        "endDate": "2024-08-10",
+        "status": "ACTIVATED"
+      }
+    },
+    {
+      "couple": {
+        "id": "COUPLE-1",
+        "partnerName1": "string",
+        "partnerName2": "string",
+        "status": "STARTED",
+        "weddingDate": "2024-08-04",
+        "account": {
+          "id": 3,
+          "email": "couple@gmail.com",
+          "name": "COUPLE",
+          "image": null,
+          "phoneNumber": "0123456789",
+          "address": "HCM",
+          "status": "ACTIVATED",
+          "provider": "LOCAL",
+          "role": { "id": 4, "name": "COUPLE" }
+        }
+      },
+      "bookingDetailId": "BOOKING-DETAIL-12",
+      "serviceSupplierResponse": {
+        "id": "SERVICE-SUPPLIER-3",
+        "name": "string",
+        "description": "stringgggggggggggggggggg",
+        "rating": 0.0,
+        "listImages": ["string"],
+        "type": "ECONOMY",
+        "createAt": "2024-08-04 23:33:10",
+        "price": 1000000,
+        "status": "ACTIVATED",
+        "serviceResponse": {
+          "id": "SERVICE-3",
+          "name": "STUDIO",
+          "description": "string",
+          "createAt": "2024-08-04 23:31:03",
+          "listImages": ["string"],
+          "categoryResponse": {
+            "id": "CATEGORY-1",
+            "categoryName": "CHỤP HÌNH",
+            "status": "ACTIVATED"
+          }
+        }
+      },
+      "price": 1000000,
+      "note": "NOTE",
+      "createAt": "2024-08-07 17:23:00",
+      "completedDate": "2024-09-07",
+      "status": "PENDING",
+      "promotionResponse": null
+    },
+    {
+      "couple": {
+        "id": "COUPLE-1",
+        "partnerName1": "string",
+        "partnerName2": "string",
+        "status": "STARTED",
+        "weddingDate": "2024-08-04",
+        "account": {
+          "id": 3,
+          "email": "couple@gmail.com",
+          "name": "COUPLE",
+          "image": null,
+          "phoneNumber": "0123456789",
+          "address": "HCM",
+          "status": "ACTIVATED",
+          "provider": "LOCAL",
+          "role": { "id": 4, "name": "COUPLE" }
+        }
+      },
+      "bookingDetailId": "BOOKING-DETAIL-11",
+      "serviceSupplierResponse": {
+        "id": "SERVICE-SUPPLIER-1",
+        "name": "Chụp hình giá rẻ",
+        "description": "string",
+        "rating": 0.0,
+        "listImages": ["string"],
+        "type": "LUXURY",
+        "createAt": "2024-08-04 18:21:19",
+        "price": 10000000,
+        "status": "ACTIVATED",
+        "serviceResponse": {
+          "id": "SERVICE-1",
+          "name": "NGOẠI CẢNH",
+          "description": "string",
+          "createAt": "2024-08-04 18:20:23",
+          "listImages": ["string"],
+          "categoryResponse": {
+            "id": "CATEGORY-1",
+            "categoryName": "CHỤP HÌNH",
+            "status": "ACTIVATED"
+          }
+        }
+      },
+      "price": 9000000,
+      "note": "NOTE",
+      "createAt": "2024-08-07 17:22:59",
+      "completedDate": "2024-09-07",
+      "status": "PENDING",
+      "promotionResponse": {
+        "id": "PROMOTION-3",
+        "name": "Giảm 10%",
+        "type": "PERCENT",
+        "value": 10,
+        "startDate": "2024-08-06",
+        "endDate": "2024-08-10",
+        "status": "ACTIVATED"
+      }
+    },
+    {
+      "couple": {
+        "id": "COUPLE-1",
+        "partnerName1": "string",
+        "partnerName2": "string",
+        "status": "STARTED",
+        "weddingDate": "2024-08-04",
+        "account": {
+          "id": 3,
+          "email": "couple@gmail.com",
+          "name": "COUPLE",
+          "image": null,
+          "phoneNumber": "0123456789",
+          "address": "HCM",
+          "status": "ACTIVATED",
+          "provider": "LOCAL",
+          "role": { "id": 4, "name": "COUPLE" }
+        }
+      },
+      "bookingDetailId": "BOOKING-DETAIL-10",
+      "serviceSupplierResponse": {
+        "id": "SERVICE-SUPPLIER-3",
+        "name": "string",
+        "description": "stringgggggggggggggggggg",
+        "rating": 0.0,
+        "listImages": ["string"],
+        "type": "ECONOMY",
+        "createAt": "2024-08-04 23:33:10",
+        "price": 1000000,
+        "status": "ACTIVATED",
+        "serviceResponse": {
+          "id": "SERVICE-3",
+          "name": "STUDIO",
+          "description": "string",
+          "createAt": "2024-08-04 23:31:03",
+          "listImages": ["string"],
+          "categoryResponse": {
+            "id": "CATEGORY-1",
+            "categoryName": "CHỤP HÌNH",
+            "status": "ACTIVATED"
+          }
+        }
+      },
+      "price": 1000000,
+      "note": "NOTE",
+      "createAt": "2024-08-07 17:19:20",
+      "completedDate": "2024-09-07",
+      "status": "PENDING",
+      "promotionResponse": null
+    },
+    {
+      "couple": {
+        "id": "COUPLE-1",
+        "partnerName1": "string",
+        "partnerName2": "string",
+        "status": "STARTED",
+        "weddingDate": "2024-08-04",
+        "account": {
+          "id": 3,
+          "email": "couple@gmail.com",
+          "name": "COUPLE",
+          "image": null,
+          "phoneNumber": "0123456789",
+          "address": "HCM",
+          "status": "ACTIVATED",
+          "provider": "LOCAL",
+          "role": { "id": 4, "name": "COUPLE" }
+        }
+      },
+      "bookingDetailId": "BOOKING-DETAIL-9",
+      "serviceSupplierResponse": {
+        "id": "SERVICE-SUPPLIER-1",
+        "name": "Chụp hình giá rẻ",
+        "description": "string",
+        "rating": 0.0,
+        "listImages": ["string"],
+        "type": "LUXURY",
+        "createAt": "2024-08-04 18:21:19",
+        "price": 10000000,
+        "status": "ACTIVATED",
+        "serviceResponse": {
+          "id": "SERVICE-1",
+          "name": "NGOẠI CẢNH",
+          "description": "string",
+          "createAt": "2024-08-04 18:20:23",
+          "listImages": ["string"],
+          "categoryResponse": {
+            "id": "CATEGORY-1",
+            "categoryName": "CHỤP HÌNH",
+            "status": "ACTIVATED"
+          }
+        }
+      },
+      "price": 9000000,
+      "note": "NOTE",
+      "createAt": "2024-08-07 17:19:19",
+      "completedDate": "2024-09-07",
+      "status": "PENDING",
+      "promotionResponse": {
+        "id": "PROMOTION-3",
+        "name": "Giảm 10%",
+        "type": "PERCENT",
+        "value": 10,
+        "startDate": "2024-08-06",
+        "endDate": "2024-08-10",
+        "status": "ACTIVATED"
+      }
+    },
+    {
+      "couple": {
+        "id": "COUPLE-1",
+        "partnerName1": "string",
+        "partnerName2": "string",
+        "status": "STARTED",
+        "weddingDate": "2024-08-04",
+        "account": {
+          "id": 3,
+          "email": "couple@gmail.com",
+          "name": "COUPLE",
+          "image": null,
+          "phoneNumber": "0123456789",
+          "address": "HCM",
+          "status": "ACTIVATED",
+          "provider": "LOCAL",
+          "role": { "id": 4, "name": "COUPLE" }
+        }
+      },
+      "bookingDetailId": "BOOKING-DETAIL-6",
+      "serviceSupplierResponse": {
+        "id": "SERVICE-SUPPLIER-16",
+        "name": "chụp hinh 3",
+        "description": "test payment 3",
+        "rating": 0.0,
+        "listImages": ["string"],
+        "type": "LUXURY",
+        "createAt": "2024-08-07 15:47:05",
+        "price": 6000000,
+        "status": "ACTIVATED",
+        "serviceResponse": {
+          "id": "SERVICE-1",
+          "name": "NGOẠI CẢNH",
+          "description": "string",
+          "createAt": "2024-08-04 18:20:23",
+          "listImages": ["string"],
+          "categoryResponse": {
+            "id": "CATEGORY-1",
+            "categoryName": "CHỤP HÌNH",
+            "status": "ACTIVATED"
+          }
+        }
+      },
+      "price": 6000000,
+      "note": "string",
+      "createAt": "2024-08-07 15:49:45",
+      "completedDate": "2024-08-16",
+      "status": "COMPLETED",
+      "promotionResponse": null
+    },
+    {
+      "couple": {
+        "id": "COUPLE-1",
+        "partnerName1": "string",
+        "partnerName2": "string",
+        "status": "STARTED",
+        "weddingDate": "2024-08-04",
+        "account": {
+          "id": 3,
+          "email": "couple@gmail.com",
+          "name": "COUPLE",
+          "image": null,
+          "phoneNumber": "0123456789",
+          "address": "HCM",
+          "status": "ACTIVATED",
+          "provider": "LOCAL",
+          "role": { "id": 4, "name": "COUPLE" }
+        }
+      },
+      "bookingDetailId": "BOOKING-DETAIL-7",
+      "serviceSupplierResponse": {
+        "id": "SERVICE-SUPPLIER-17",
+        "name": "chụp hinh 4",
+        "description": "test payment 4",
+        "rating": 0.0,
+        "listImages": ["string"],
+        "type": "LUXURY",
+        "createAt": "2024-08-07 15:48:31",
+        "price": 7000000,
+        "status": "ACTIVATED",
+        "serviceResponse": {
+          "id": "SERVICE-2",
+          "name": "PHÓNG SỰ",
+          "description": "string",
+          "createAt": "2024-08-04 23:30:49",
+          "listImages": ["string"],
+          "categoryResponse": {
+            "id": "CATEGORY-1",
+            "categoryName": "CHỤP HÌNH",
+            "status": "ACTIVATED"
+          }
+        }
+      },
+      "price": 7000000,
+      "note": "string",
+      "createAt": "2024-08-07 15:49:45",
+      "completedDate": "2024-08-16",
+      "status": "COMPLETED",
+      "promotionResponse": null
+    },
+    {
+      "couple": {
+        "id": "COUPLE-1",
+        "partnerName1": "string",
+        "partnerName2": "string",
+        "status": "STARTED",
+        "weddingDate": "2024-08-04",
+        "account": {
+          "id": 3,
+          "email": "couple@gmail.com",
+          "name": "COUPLE",
+          "image": null,
+          "phoneNumber": "0123456789",
+          "address": "HCM",
+          "status": "ACTIVATED",
+          "provider": "LOCAL",
+          "role": { "id": 4, "name": "COUPLE" }
+        }
+      },
+      "bookingDetailId": "BOOKING-DETAIL-8",
+      "serviceSupplierResponse": {
+        "id": "SERVICE-SUPPLIER-17",
+        "name": "chụp hinh 4",
+        "description": "test payment 4",
+        "rating": 0.0,
+        "listImages": ["string"],
+        "type": "LUXURY",
+        "createAt": "2024-08-07 15:48:31",
+        "price": 7000000,
+        "status": "ACTIVATED",
+        "serviceResponse": {
+          "id": "SERVICE-2",
+          "name": "PHÓNG SỰ",
+          "description": "string",
+          "createAt": "2024-08-04 23:30:49",
+          "listImages": ["string"],
+          "categoryResponse": {
+            "id": "CATEGORY-1",
+            "categoryName": "CHỤP HÌNH",
+            "status": "ACTIVATED"
+          }
+        }
+      },
+      "price": 7000000,
+      "note": "string",
+      "createAt": "2024-08-07 15:49:45",
+      "completedDate": "2024-08-16",
+      "status": "COMPLETED",
+      "promotionResponse": null
+    },
+    {
+      "couple": {
+        "id": "COUPLE-1",
+        "partnerName1": "string",
+        "partnerName2": "string",
+        "status": "STARTED",
+        "weddingDate": "2024-08-04",
+        "account": {
+          "id": 3,
+          "email": "couple@gmail.com",
+          "name": "COUPLE",
+          "image": null,
+          "phoneNumber": "0123456789",
+          "address": "HCM",
+          "status": "ACTIVATED",
+          "provider": "LOCAL",
+          "role": { "id": 4, "name": "COUPLE" }
+        }
+      },
+      "bookingDetailId": "BOOKING-DETAIL-4",
+      "serviceSupplierResponse": {
+        "id": "SERVICE-SUPPLIER-14",
+        "name": "chụp hinh 1",
+        "description": "test payment",
+        "rating": 0.0,
+        "listImages": ["string"],
+        "type": "ECONOMY",
+        "createAt": "2024-08-07 15:18:14",
+        "price": 1000000,
+        "status": "ACTIVATED",
+        "serviceResponse": {
+          "id": "SERVICE-1",
+          "name": "NGOẠI CẢNH",
+          "description": "string",
+          "createAt": "2024-08-04 18:20:23",
+          "listImages": ["string"],
+          "categoryResponse": {
+            "id": "CATEGORY-1",
+            "categoryName": "CHỤP HÌNH",
+            "status": "ACTIVATED"
+          }
+        }
+      },
+      "price": 1000000,
+      "note": "string",
+      "createAt": "2024-08-07 15:32:43",
+      "completedDate": "2024-08-16",
+      "status": "COMPLETED",
+      "promotionResponse": null
+    },
+    {
+      "couple": {
+        "id": "COUPLE-1",
+        "partnerName1": "string",
+        "partnerName2": "string",
+        "status": "STARTED",
+        "weddingDate": "2024-08-04",
+        "account": {
+          "id": 3,
+          "email": "couple@gmail.com",
+          "name": "COUPLE",
+          "image": null,
+          "phoneNumber": "0123456789",
+          "address": "HCM",
+          "status": "ACTIVATED",
+          "provider": "LOCAL",
+          "role": { "id": 4, "name": "COUPLE" }
+        }
+      },
+      "bookingDetailId": "BOOKING-DETAIL-5",
+      "serviceSupplierResponse": {
+        "id": "SERVICE-SUPPLIER-15",
+        "name": "chụp hinh 2",
+        "description": "test payment 2",
+        "rating": 0.0,
+        "listImages": ["string"],
+        "type": "LUXURY",
+        "createAt": "2024-08-07 15:19:00",
+        "price": 5000000,
+        "status": "ACTIVATED",
+        "serviceResponse": {
+          "id": "SERVICE-2",
+          "name": "PHÓNG SỰ",
+          "description": "string",
+          "createAt": "2024-08-04 23:30:49",
+          "listImages": ["string"],
+          "categoryResponse": {
+            "id": "CATEGORY-1",
+            "categoryName": "CHỤP HÌNH",
+            "status": "ACTIVATED"
+          }
+        }
+      },
+      "price": 5000000,
+      "note": "string",
+      "createAt": "2024-08-07 15:32:43",
+      "completedDate": "2024-08-16",
+      "status": "COMPLETED",
+      "promotionResponse": null
+    },
+    {
+      "couple": {
+        "id": "COUPLE-1",
+        "partnerName1": "string",
+        "partnerName2": "string",
+        "status": "STARTED",
+        "weddingDate": "2024-08-04",
+        "account": {
+          "id": 3,
+          "email": "couple@gmail.com",
+          "name": "COUPLE",
+          "image": null,
+          "phoneNumber": "0123456789",
+          "address": "HCM",
+          "status": "ACTIVATED",
+          "provider": "LOCAL",
+          "role": { "id": 4, "name": "COUPLE" }
+        }
+      },
+      "bookingDetailId": "BOOKING-DETAIL-3",
+      "serviceSupplierResponse": {
+        "id": "SERVICE-SUPPLIER-1",
+        "name": "Chụp hình giá rẻ",
+        "description": "string",
+        "rating": 0.0,
+        "listImages": ["string"],
+        "type": "LUXURY",
+        "createAt": "2024-08-04 18:21:19",
+        "price": 10000000,
+        "status": "ACTIVATED",
+        "serviceResponse": {
+          "id": "SERVICE-1",
+          "name": "NGOẠI CẢNH",
+          "description": "string",
+          "createAt": "2024-08-04 18:20:23",
+          "listImages": ["string"],
+          "categoryResponse": {
+            "id": "CATEGORY-1",
+            "categoryName": "CHỤP HÌNH",
+            "status": "ACTIVATED"
+          }
+        }
+      },
+      "price": 9000000,
+      "note": "string",
+      "createAt": "2024-08-06 23:00:18",
+      "completedDate": "2024-09-06",
+      "status": "PENDING",
+      "promotionResponse": {
+        "id": "PROMOTION-3",
+        "name": "Giảm 10%",
+        "type": "PERCENT",
+        "value": 10,
+        "startDate": "2024-08-06",
+        "endDate": "2024-08-10",
+        "status": "ACTIVATED"
+      }
+    },
+    {
+      "couple": {
+        "id": "COUPLE-1",
+        "partnerName1": "string",
+        "partnerName2": "string",
+        "status": "STARTED",
+        "weddingDate": "2024-08-04",
+        "account": {
+          "id": 3,
+          "email": "couple@gmail.com",
+          "name": "COUPLE",
+          "image": null,
+          "phoneNumber": "0123456789",
+          "address": "HCM",
+          "status": "ACTIVATED",
+          "provider": "LOCAL",
+          "role": { "id": 4, "name": "COUPLE" }
+        }
+      },
+      "bookingDetailId": "BOOKING-DETAIL-2",
+      "serviceSupplierResponse": {
+        "id": "SERVICE-SUPPLIER-4",
+        "name": "string",
+        "description": "string",
+        "rating": 0.0,
+        "listImages": ["string"],
+        "type": "ECONOMY",
+        "createAt": "2024-08-04 23:33:22",
+        "price": 1000000,
+        "status": "ACTIVATED",
+        "serviceResponse": {
+          "id": "SERVICE-4",
+          "name": "HIỆN ĐẠI",
+          "description": "string",
+          "createAt": "2024-08-04 23:31:38",
+          "listImages": ["string"],
+          "categoryResponse": {
+            "id": "CATEGORY-2",
+            "categoryName": "THIỆP CƯỚI",
+            "status": "ACTIVATED"
+          }
+        }
+      },
+      "price": 1000000,
+      "note": "TEST PRICE",
+      "createAt": "2024-08-06 17:43:20",
+      "completedDate": "2024-09-06",
+      "status": "COMPLETED",
+      "promotionResponse": null
     }
   ],
   "status": "SUCCESS"

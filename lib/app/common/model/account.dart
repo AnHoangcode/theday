@@ -4,21 +4,17 @@
 
 import 'dart:convert';
 
-
-const ROLE_COUPLE = 'COUPLE';
-
-// To parse this JSON data, do
-//
-//     final account = accountFromJson(jsonString);
-
-
 Account accountFromJson(String str) => Account.fromJson(json.decode(str));
 
 String accountToJson(Account data) => json.encode(data.toJson());
 
+const coupleRole = 'COUPLE';
+const supplierRole = 'SUPPLIER';
+
 class Account {
     int? accountId;
     String? token;
+    int? balance;
     String? roleName;
     String? email;
     String? status;
@@ -27,6 +23,7 @@ class Account {
     Account({
         this.accountId,
         this.token,
+        this.balance,
         this.roleName,
         this.email,
         this.status,
@@ -36,6 +33,7 @@ class Account {
     Account copyWith({
         int? accountId,
         String? token,
+        int? balance,
         String? roleName,
         String? email,
         String? status,
@@ -44,6 +42,7 @@ class Account {
         Account(
             accountId: accountId ?? this.accountId,
             token: token ?? this.token,
+            balance: balance ?? this.balance,
             roleName: roleName ?? this.roleName,
             email: email ?? this.email,
             status: status ?? this.status,
@@ -53,6 +52,7 @@ class Account {
     factory Account.fromJson(Map<String, dynamic> json) => Account(
         accountId: json["accountId"],
         token: json["token"],
+        balance: json["balance"],
         roleName: json["roleName"],
         email: json["email"],
         status: json["status"],
@@ -62,6 +62,7 @@ class Account {
     Map<String, dynamic> toJson() => {
         "accountId": accountId,
         "token": token,
+        "balance": balance,
         "roleName": roleName,
         "email": email,
         "status": status,

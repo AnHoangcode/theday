@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/booking-detail-supplier/bindings/booking_detail_supplier_binding.dart';
+import '../modules/booking-detail-supplier/views/booking_detail_supplier_view.dart';
 import '../modules/booking-detail/bindings/booking_detail_binding.dart';
 import '../modules/booking-detail/views/booking_detail_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -50,6 +52,11 @@ class AppPages {
       name: _Paths.BOOKING_DETAIL,
       page: () => const BookingDetailView(),
       binding: BookingDetailBinding(),
+    ),
+    GetPage(
+      name: _Paths.BOOKING_DETAIL_SUPPLIER,
+      page: () => const BookingDetailSupplierView(),
+      binding: BookingDetailSupplierBinding(),
     ),
   ];
 }

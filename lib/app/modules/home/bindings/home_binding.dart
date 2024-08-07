@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:theday/app/modules/nav-account/controllers/nav_account_controller.dart';
 import 'package:theday/app/modules/nav-home/controllers/nav_home_controller.dart';
 
 import '../controllers/home_controller.dart';
@@ -11,6 +12,9 @@ class HomeBinding extends Bindings {
     );
     Get.lazyPut<NavHomeController>(
       () => NavHomeController(),
+    );
+       Get.lazyPut<NavAccountController>(
+      () => NavAccountController(),
     );
   }
 }

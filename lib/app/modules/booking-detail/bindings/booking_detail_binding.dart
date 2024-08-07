@@ -6,9 +6,9 @@ import '../controllers/booking_detail_controller.dart';
 class BookingDetailBinding extends Bindings {
   @override
   void dependencies() {
-    final booking = Get.arguments as Booking;
+    final idBooking = Get.arguments as String;
     Get.lazyPut<BookingDetailController>(
-      () => BookingDetailController(bookingData: booking),
+      () => BookingDetailController(idBooking: idBooking),
     );
   }
 }

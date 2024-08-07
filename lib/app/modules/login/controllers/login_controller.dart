@@ -10,8 +10,10 @@ import 'package:theday/app/routes/app_pages.dart';
 class LoginController extends GetxController {
   //TODO: Implement LoginController
 
-  TextEditingController emailController = TextEditingController(text: '');
-  TextEditingController passwordController = TextEditingController(text: '');
+  TextEditingController emailController =
+      TextEditingController(text: '');
+  TextEditingController passwordController =
+      TextEditingController(text: '');
 
   Rx<String> emailError = ''.obs;
   Rx<String> passwordError = ''.obs;
@@ -60,6 +62,7 @@ class LoginController extends GetxController {
     validationEmail();
     validationPassword();
     if (passwordError.isEmpty && emailError.isEmpty && !isLockButton.value) {
+      // Get.toNamed(Routes.HOME);
       isLockButton(true);
       service
           .loginWithEmailPassword(

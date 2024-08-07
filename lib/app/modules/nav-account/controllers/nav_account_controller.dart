@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:theday/app/routes/app_pages.dart';
 
 class NavAccountController extends GetxController {
   //TODO: Implement NavAccountController
@@ -18,6 +19,8 @@ class NavAccountController extends GetxController {
   void onClose() {
     super.onClose();
   }
-
-  void increment() => count.value++;
+  
+  logout(){
+    Get.offAllNamed(Routes.LOGIN);
+  }
 }
