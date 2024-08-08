@@ -228,6 +228,11 @@ class BookingDetailView extends GetView<BookingDetailController> {
                                         primary: false,
                                         itemBuilder: (context, index) => _textData(
                                             context,
+                                            isCancel:[cancelStatusService, rejectStatusService].contains( controller
+                                                .bookingData
+                                                .value
+                                                .listBookingDetail![index]
+                                                .status) ,
                                             title: controller
                                                 .bookingData
                                                 .value
@@ -460,15 +465,27 @@ class BookingDetailView extends GetView<BookingDetailController> {
   Row _textData(BuildContext context,
       {required String title,
       required String content,
+      bool isCancel = false,
       bool isBoldContent = false}) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        TextConstant.subTile2(context,
-            fontWeight: FontWeight.w400, text: title, color: Colors.black87),
-        TextConstant.subTile1(context,
-            text: content,
-            fontWeight: isBoldContent ? FontWeight.w800 : FontWeight.w400),
+        Expanded(
+          child: TextConstant.subTile2(context,
+          isCancel: isCancel,
+              fontWeight: FontWeight.w400, text: title, color:isCancel?Colors.red: Colors.black87),
+        ),
+        Expanded(
+          child: Align(
+            alignment: Alignment.centerRight,
+            child: TextConstant.subTile1(context,
+                text: content,
+                isCancel:isCancel,
+                color:
+                isCancel?Colors.red:Colors.black,
+                fontWeight: isBoldContent ? FontWeight.w800 : FontWeight.w400),
+          ),
+        ),
       ],
     );
   }

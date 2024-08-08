@@ -49,11 +49,13 @@ class TextConstant {
  static Text subTile1(BuildContext context,
       {required String text,
       double size = 16,
+      bool isCancel = false,
       FontWeight fontWeight = FontWeight.w600,
       Color color = Colors.black}) {
     return Text(
       text,
       style: GoogleFonts.montserrat(
+          decoration: isCancel? TextDecoration.lineThrough:null,
           fontSize: UtilsReponsive.formatFontSize(size, context),
           fontWeight: fontWeight,
           color: color),
@@ -63,11 +65,13 @@ class TextConstant {
  static Text subTile2(BuildContext context,
       {required String text,
       double size = 14,
+      bool isCancel = false,
       FontWeight fontWeight = FontWeight.w600,
       Color color = Colors.black}) {
     return Text(
       text,
       style: GoogleFonts.montserrat(
+          decoration: isCancel? TextDecoration.lineThrough:null,
           fontSize: UtilsReponsive.formatFontSize(size, context),
           fontWeight: fontWeight,
           color: color),
