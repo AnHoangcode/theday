@@ -11,9 +11,9 @@ class LoginController extends GetxController {
   //TODO: Implement LoginController
 
   TextEditingController emailController =
-      TextEditingController(text: 'Cdef@gmail.com');
+      TextEditingController(text: '');
   TextEditingController passwordController =
-      TextEditingController(text: '123456789');
+      TextEditingController(text: '');
 
   Rx<String> emailError = ''.obs;
   Rx<String> passwordError = ''.obs;
