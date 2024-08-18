@@ -148,7 +148,7 @@ class LoginView extends GetView<LoginController> {
                         ],
                       ),
                       onPressed: () async {
-                        await controller.login();
+                        await controller.handleSignIn();
                       },
                     ),
                   ),

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "132164459866",
+    "firebase_url": "https://thedaycapstone-default-rtdb.firebaseio.com",
+    "project_id": "thedaycapstone",
+    "storage_bucket": "thedaycapstone.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:132164459866:android:7b4e569c57ece7ecc0a763",
+        "android_client_info": {
+          "package_name": "com.theday.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "132164459866-ifj11k0nadapteln9nvf2lneb4tgr7cv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.theday.app",
+            "certificate_hash": "ba1f9aa8738277396486314f8719d6fc61bbf0ff"
+          }
+        },
+        {
+          "client_id": "132164459866-hplgr9dl1hq6j62n0lf3l3ed70gelk4k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSHq5IWMrs0BjjRSMd2gBM9lXgvOU806c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "132164459866-hplgr9dl1hq6j62n0lf3l3ed70gelk4k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

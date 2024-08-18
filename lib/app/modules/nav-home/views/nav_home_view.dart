@@ -40,7 +40,7 @@ class NavHomeView extends GetView<NavHomeController> {
                         SizedBoxConst.sizeWith(context: context),
                         TextConstant.subTile3(context,
                             fontWeight: FontWeight.bold,
-                            text: 'Xin chào',
+                            text: 'Xin chào,\n${BaseCommon.instance.accountSession?.name}',
                             color: ColorManager.secondaryColor),
                       ],
                     ),

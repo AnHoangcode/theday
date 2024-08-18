@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:theday/app/common/base_common.dart';
 import 'package:theday/app/modules/login/service/auth_service.dart';
 import 'package:theday/app/resource/util_common.dart';
@@ -11,9 +12,9 @@ class LoginController extends GetxController {
   //TODO: Implement LoginController
 
   TextEditingController emailController =
-      TextEditingController(text: '');
+      TextEditingController(text: 'lyhieuduy9190@gmail.com');
   TextEditingController passwordController =
-      TextEditingController(text: '');
+      TextEditingController(text: '123456789');
 
   Rx<String> emailError = ''.obs;
   Rx<String> passwordError = ''.obs;
@@ -23,6 +24,13 @@ class LoginController extends GetxController {
 
   final visiblePassword = false.obs;
   AuthService service = AuthService();
+
+  GoogleSignIn _googleSignIn = GoogleSignIn(
+    scopes: <String>[
+      'email',
+      'https://www.googleapis.com/auth/contacts.readonly',
+    ]
+  );
   @override
   void onInit() {
     super.onInit();
@@ -77,4 +85,21 @@ class LoginController extends GetxController {
       });
     }
   }
+
+  Future<void> handleSignIn() async {
+  try {
+  GoogleSignInAccount? account =   await _googleSignIn.signIn();
+  if(account!=null){
+    account.authentication.then((res){
+      log(res.accessToken??'');
+      log(res.idToken??'');
+
+    });
+  }
+  } catch (error) {
+    print('lỗi $error');
+  }
+}
+
+  
 }
