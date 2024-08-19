@@ -24,20 +24,25 @@ class NavAccountView extends GetView<NavAccountController> {
           SizedBoxConst.size(context: context),
           TextConstant.subTile2(context, text: '${BaseCommon.instance.accountSession?.email}'),
           SizedBoxConst.size(context: context, size: 20),
-          Container(
-            height: UtilsReponsive.height(50, context),
-            padding: EdgeInsets.symmetric(horizontal: UtilsReponsive.width(10, context)),
-            decoration: BoxDecoration(
-              color: ColorManager.secondaryColor,
-              borderRadius: BorderRadius.circular(UtilsReponsive.height(10, context))
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Icon(Icons.person, color: Colors.white,),
-                TextConstant.subTile1(context, text: 'Thông tin cá nhân', color: Colors.white,),
-                Icon(Icons.arrow_forward_ios_outlined, color: Colors.white,),
-              ],
+          GestureDetector(
+            onTap: () {
+              Get.toNamed(Routes.PERSONAL_ACCOUNT);
+            },
+            child: Container(
+              height: UtilsReponsive.height(50, context),
+              padding: EdgeInsets.symmetric(horizontal: UtilsReponsive.width(10, context)),
+              decoration: BoxDecoration(
+                color: ColorManager.secondaryColor,
+                borderRadius: BorderRadius.circular(UtilsReponsive.height(10, context))
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Icon(Icons.person, color: Colors.white,),
+                  TextConstant.subTile1(context, text: 'Thông tin cá nhân', color: Colors.white,),
+                  Icon(Icons.arrow_forward_ios_outlined, color: Colors.white,),
+                ],
+              ),
             ),
           ),
           SizedBoxConst.size(context: context, ),
