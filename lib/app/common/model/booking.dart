@@ -9,7 +9,7 @@ Booking bookingFromJson(String str) => Booking.fromJson(json.decode(str));
 String bookingToJson(Booking data) => json.encode(data.toJson());
 
 const pendingStatus = 'PENDING';
-const cancelStatus = 'CANCEL';
+const cancelStatus = 'CANCELED';
 const confirmStatus = 'CONFIRMED';
 const completeSatus = 'COMPLETED';
 
@@ -17,17 +17,28 @@ const completeSatus = 'COMPLETED';
 // PENDING - APPROVED- CANCLE - REJECT - PROCESSING - COMPLETED
 const pendingStatusService = 'PENDING';
 const approvedStatusService = 'APPROVED';
-const cancelStatusService = 'CANCELLED';
+const cancelStatusService = 'CANCELED';
 const rejectStatusService = 'REJECTED';
 const processingStatusService = 'PROCESSING';
 const completedStatusService = 'COMPLETED';
+const depositedStatusService = 'DEPOSITED';
 
 
 
 
-// To parse this JSON data, do
-//
-//     final booking = bookingFromJson(jsonString);
+
+//PENDING ==> APPROVED / REJECTED
+//APPROVED ==> DEPOSITED(Không nằm ở mobile nhưng ghi nhận trên UI)
+//DEPOSITED ==> PROCESSING => DONE  (Supplier) ==> COMPLETED auto 
+
+
+//Reject với cancel là có note
+
+
+
+
+
+
 
 class Booking {
   String? id;

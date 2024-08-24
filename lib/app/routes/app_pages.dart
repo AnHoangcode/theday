@@ -12,6 +12,8 @@ import '../modules/nav-account/bindings/nav_account_binding.dart';
 import '../modules/nav-account/views/nav_account_view.dart';
 import '../modules/nav-home/bindings/nav_home_binding.dart';
 import '../modules/nav-home/views/nav_home_view.dart';
+import '../modules/personal-supplier/bindings/personal_supplier_binding.dart';
+import '../modules/personal-supplier/views/personal_supplier_view.dart';
 import '../modules/personal_account/bindings/personal_account_binding.dart';
 import '../modules/personal_account/views/personal_account_view.dart';
 import '../modules/welcome/bindings/welcome_binding.dart';
@@ -64,6 +66,11 @@ class AppPages {
       name: _Paths.PERSONAL_ACCOUNT,
       page: () => const PersonalAccountView(),
       binding: PersonalAccountBinding(),
+    ),
+    GetPage(
+      name: _Paths.PERSONAL_SUPPLIER,
+      page: () => const PersonalSupplierView(),
+      binding: PersonalSupplierBinding(),
     ),
   ];
 }

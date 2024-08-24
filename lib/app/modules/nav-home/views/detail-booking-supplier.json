@@ -1,0 +1,15 @@
+ {
+      "bookingDetailId": "BOOKING-DETAIL-10",
+      "serviceSupplierResponse": {
+        "id": "SERVICE-SUPPLIER-27",
+        "name": "TCKM011 - 100 cái",
+        "listImages": [
+          "https://firebasestorage.googleapis.com/v0/b/weddingwise-daa83.appspot.com/o/images%2Fthi%E1%BB%87p%20c%C6%B0%E1%BB%9Bi.jpg?alt=media&token=e655839c-1706-4545-bfc5-ebded7bb4c59"
+        ]
+      },
+      "price": 450000,
+      "quantity": 1,
+      "note": "test",
+      "completedDate": "2024-08-15",
+      "status": "APPROVED"
+}

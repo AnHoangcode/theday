@@ -7,6 +7,7 @@ import 'package:get/get.dart';
 import 'package:theday/app/common/base_common.dart';
 import 'package:theday/app/common/model/account.dart';
 import 'package:theday/app/common/model/booking.dart';
+import 'package:theday/app/common/model/booking_overview_supplier.dart';
 import 'package:theday/app/common/model/service_supplier_model.dart';
 import 'package:theday/app/common/service/booking_service.dart';
 import 'package:theday/app/resource/util_common.dart';
@@ -15,7 +16,7 @@ import 'package:theday/app/routes/app_pages.dart';
 class NavHomeController extends GetxController {
   //TODO: Implement NavHomeController
   RxList<Booking> listBooking = <Booking>[].obs;
-  RxList<ServiceSupplierModel> listService = <ServiceSupplierModel>[].obs;
+  RxList<BookingOverViewSupplier> listService = <BookingOverViewSupplier>[].obs;
 
   final isLoading = true.obs;
   final isLockUpdate = false.obs;

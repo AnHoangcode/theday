@@ -40,14 +40,23 @@ class UtilCommon {
         text = 'Từ chối';
         color = Colors.red;
         break;
+        case 'CANCELED':
+        text = 'Đã huỷ';
+        color = Colors.red;
+        break;
           case 'PROCESSING':
         text = 'Đang thực hiện';
-        color = Colors.amber.shade700;
+        color = Colors.blueAccent;
         break;
          case 'COMPLETED':
         text = 'Hoàn thành';
         color = Colors.green;
         break;
+          case 'DEPOSITED':
+        text = 'Đã cọc';
+        color = Colors.amber.shade900;
+        break;
+        //
       default:
       text = 'Đang đợi';
         color = Colors.blue;
@@ -64,6 +73,7 @@ class UtilCommon {
           borderRadius: BorderRadius.circular(10)),
       child: TextConstant.subTile3(
         context,
+        size: 12,
         fontWeight: FontWeight.bold,
         color: Colors.white,
         text: text,

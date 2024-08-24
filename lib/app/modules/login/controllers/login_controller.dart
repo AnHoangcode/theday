@@ -1,5 +1,7 @@
+import 'dart:convert';
 import 'dart:developer';
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -25,12 +27,10 @@ class LoginController extends GetxController {
   final visiblePassword = false.obs;
   AuthService service = AuthService();
 
-  GoogleSignIn _googleSignIn = GoogleSignIn(
-    scopes: <String>[
-      'email',
-      'https://www.googleapis.com/auth/contacts.readonly',
-    ]
-  );
+  GoogleSignIn _googleSignIn = GoogleSignIn(scopes: <String>[
+    'email',
+    'https://www.googleapis.com/auth/contacts.readonly',
+  ]);
   @override
   void onInit() {
     super.onInit();
@@ -87,19 +87,37 @@ class LoginController extends GetxController {
   }
 
   Future<void> handleSignIn() async {
-  try {
-  GoogleSignInAccount? account =   await _googleSignIn.signIn();
-  if(account!=null){
-    account.authentication.then((res){
-      log(res.accessToken??'');
-      log(res.idToken??'');
-
-    });
+    try {
+      GoogleSignInAccount? account = await _googleSignIn.signIn();
+      if (account != null) {
+        account.authentication.then((googleAuth) async {
+          final credential = GoogleAuthProvider.credential(
+            accessToken: googleAuth.accessToken,
+            idToken: googleAuth.idToken,
+          );
+          await FirebaseAuth.instance.signInWithCredential(credential);
+          User? user = FirebaseAuth.instance.currentUser;
+          if (user != null) {
+            // Lấy token Bearer
+            String? token = await user.getIdToken();
+            log('hihi: ${token}');
+            service
+                .loginWithGoogle(
+                    token: token!,
+                  )
+                .then((account) {
+              BaseCommon.instance.saveAccount(account: account);
+              Get.toNamed(Routes.HOME);
+            }).catchError((error) {
+              isLockButton(false);
+              log('$error');
+              UtilCommon.snackBar(text: '$error', isFail: true);
+            });
+          }
+        });
+      }
+    } catch (error) {
+      print('lỗi $error');
+    }
   }
-  } catch (error) {
-    print('lỗi $error');
-  }
-}
-
-  
 }

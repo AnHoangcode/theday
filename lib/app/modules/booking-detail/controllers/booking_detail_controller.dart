@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:developer';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:theday/app/common/base_common.dart';
@@ -23,6 +24,16 @@ class BookingDetailController extends GetxController {
 
   final isLoading = true.obs;
   final isLockButtonCancel = false.obs;
+
+  List<String> templateReasonCancel = [
+    "Không đủ nguồn lực",
+    "Không tiện",
+    "Khác"
+  ];
+  TextEditingController textEdittingController =
+      TextEditingController(text: '');
+
+  Rx<String> reasonChoice = 'Khác'.obs;
   @override
   void onInit() {
     super.onInit();
@@ -53,7 +64,11 @@ class BookingDetailController extends GetxController {
   Future<void> cancelService({required String idService}) async {
     Get.back();
     isLockButtonCancel.value = true;
-    service.cancelService(idService: idService).then((check) async{
+    String reason = reasonChoice.value;
+    if (reasonChoice.value == 'Khác') {
+      reason = textEdittingController.text;
+    }
+    service.cancelService(idService: idService, note: reason).then((check) async{
       isLockButtonCancel.value = false;
       UtilCommon.snackBar(text: 'Huỷ thành công');
       initData();
@@ -68,11 +83,16 @@ class BookingDetailController extends GetxController {
   Future<void> cancelBooking({required String idBooking}) async {
     Get.back();
     isLockButtonCancel.value = true;
-    service.cancelBooking(idBooking: idBooking).then((check) {
+    String reason = reasonChoice.value;
+    if (reasonChoice.value == 'Khác') {
+      reason = textEdittingController.text;
+    }
+    service.cancelBooking(idBooking: idBooking, note: reason).then((check) {
       isLockButtonCancel.value = false;
       Get.find<NavHomeController>().initData();
       Get.back();
       UtilCommon.snackBar(text: 'Huỷ thành công');
+       Get.find<NavHomeController>().initData();
       isLoading(false);
     }).catchError((error) async {
       isLoading(false);

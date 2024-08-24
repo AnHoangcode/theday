@@ -11,6 +11,7 @@ abstract class Routes {
   static const BOOKING_DETAIL = _Paths.BOOKING_DETAIL;
   static const BOOKING_DETAIL_SUPPLIER = _Paths.BOOKING_DETAIL_SUPPLIER;
   static const PERSONAL_ACCOUNT = _Paths.PERSONAL_ACCOUNT;
+  static const PERSONAL_SUPPLIER = _Paths.PERSONAL_SUPPLIER;
 }
 
 abstract class _Paths {
@@ -23,4 +24,5 @@ abstract class _Paths {
   static const BOOKING_DETAIL = '/booking-detail';
   static const BOOKING_DETAIL_SUPPLIER = '/booking-detail-supplier';
   static const PERSONAL_ACCOUNT = '/personal-account';
+  static const PERSONAL_SUPPLIER = '/personal-supplier';
 }

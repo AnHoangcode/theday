@@ -8,6 +8,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:theday/app/common/model/booking.dart';
 import 'package:theday/app/resource/base_define.dart';
+import 'package:theday/app/resource/form_field_widget.dart';
 import 'package:theday/app/resource/logo_app.dart';
 import 'package:theday/app/resource/reponsive_utils.dart';
 import 'package:theday/app/resource/text_style.dart';
@@ -34,8 +35,11 @@ class BookingDetailView extends GetView<BookingDetailController> {
               )),
         ),
         backgroundColor: Colors.amber.shade700,
-        bottomNavigationBar: Obx(() =>
-            (controller.isLoading.value|| [completedStatusService, cancelStatusService].contains(controller.bookingData.value.status)) ? SizedBox() : _buttonSupplier(context)),
+        bottomNavigationBar: Obx(() => (controller.isLoading.value ||
+                [completedStatusService, cancelStatusService]
+                    .contains(controller.bookingData.value.status))
+            ? SizedBox()
+            : _buttonCancelCouple(context)),
         body: Obx(
           () => controller.isLoading.value
               ? Container(
@@ -148,11 +152,8 @@ class BookingDetailView extends GetView<BookingDetailController> {
                                                 color: Colors.white,
                                                 text:
                                                     '${controller.bookingData.value.couple!.partnerName1!}'),
-                                            Icon(
-                                                CupertinoIcons
-                                                    .heart_fill,
-                                                size: 20,
-                                                color: Colors.red),
+                                            Icon(CupertinoIcons.heart_fill,
+                                                size: 20, color: Colors.red),
                                             TextConstant.subTile2(context,
                                                 color: Colors.white,
                                                 text:
@@ -176,16 +177,42 @@ class BookingDetailView extends GetView<BookingDetailController> {
                                     text: 'Thông tin liên hệ',
                                     fontWeight: FontWeight.bold,
                                     color: ColorManager.secondaryColor),
-                                _textData(context,
-                                    title: 'Số điện thoại: ',
-                                    content: controller.bookingData.value.couple
-                                            ?.account?.phoneNumber ??
-                                        ''),
-                                _textData(context,
-                                    title: 'Địa chỉ: ',
-                                    content: controller.bookingData.value.couple
-                                            ?.account?.address ??
-                                        '')
+                                SizedBoxConst.size(context: context),
+                                Row(
+                                  children: [
+                                    Icon(Icons.phone,
+                                        color: ColorManager.secondaryColor),
+                                    SizedBoxConst.sizeWith(context: context),
+                                    Expanded(
+                                      child: TextConstant.subTile1(context,
+                                          text: controller
+                                                  .bookingData
+                                                  .value
+                                                  .couple
+                                                  ?.account
+                                                  ?.phoneNumber ??
+                                              '',
+                                          fontWeight: FontWeight.w400),
+                                    )
+                                  ],
+                                ),
+                                SizedBoxConst.size(context: context),
+                                Row(
+                                  children: [
+                                    Icon(
+                                      CupertinoIcons.location,
+                                      color: ColorManager.secondaryColor,
+                                    ),
+                                    SizedBoxConst.sizeWith(context: context),
+                                    Expanded(
+                                      child: TextConstant.subTile1(context,
+                                          text: controller.bookingData.value
+                                                  .couple?.account?.address ??
+                                              '',
+                                          fontWeight: FontWeight.w400),
+                                    )
+                                  ],
+                                ),
 
                                 // Container(
                                 //   width: UtilsReponsive.width(60, context),
@@ -198,7 +225,6 @@ class BookingDetailView extends GetView<BookingDetailController> {
                                 //     fontWeight: FontWeight.w400,
                                 //     text:
                                 //         'Đại học FPT Hà Nội tọa lạc tại Khu Công nghệ cao Hòa Lạc, Km29 Đại lộ Thăng Long, huyện Thạch Thất, Hà Nội'),
-                                ,
                                 SizedBoxConst.size(context: context),
                                 TextConstant.subTile1(context,
                                     text: 'Bảng dịch vụ',
@@ -228,11 +254,14 @@ class BookingDetailView extends GetView<BookingDetailController> {
                                         primary: false,
                                         itemBuilder: (context, index) => _textData(
                                             context,
-                                            isCancel:[cancelStatusService, rejectStatusService].contains( controller
+                                            isCancel: [
+                                              cancelStatusService,
+                                              rejectStatusService
+                                            ].contains(controller
                                                 .bookingData
                                                 .value
                                                 .listBookingDetail![index]
-                                                .status) ,
+                                                .status),
                                             title: controller
                                                 .bookingData
                                                 .value
@@ -355,7 +384,7 @@ class BookingDetailView extends GetView<BookingDetailController> {
         ));
   }
 
-  GestureDetector _buttonSupplier(BuildContext context) {
+  GestureDetector _buttonCancelCouple(BuildContext context) {
     return GestureDetector(
       onTap: () async {
         // Get.back();
@@ -389,40 +418,42 @@ class BookingDetailView extends GetView<BookingDetailController> {
                   size: 10),
               Expanded(
                   child: ListView.builder(
-                      itemBuilder: (context, index) =>  Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Card(
-                                child: ListTile(
-                                  title: TextConstant.subTile3(context,
-                                      text: controller
-                                          .bookingData
-                                          .value
-                                          .listBookingDetail![index]
-                                          .serviceSupplier!
-                                          .name!),
-                                  trailing:controller.bookingData
-                                  .value.listBookingDetail![index].status ==
-                              pendingStatus
-                          ? GestureDetector(
-                                      onTap: () async {
-                                        await controller.cancelService(
-                                            idService: controller
-                                                .bookingData
-                                                .value
-                                                .listBookingDetail![index]
-                                                .id!);
-                                      },
-                                      child: TextConstant.subTile3(context,
-                                          text: 'Huỷ', color: Colors.red)):SizedBox(),
-                                ),
+                      itemBuilder: (context, index) => Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Card(
+                              child: ListTile(
+                                title: TextConstant.subTile3(context,
+                                    text: controller
+                                        .bookingData
+                                        .value
+                                        .listBookingDetail![index]
+                                        .serviceSupplier!
+                                        .name!),
+                                trailing: controller.bookingData.value
+                                            .listBookingDetail![index].status ==
+                                        pendingStatus
+                                    ? GestureDetector(
+                                        onTap: () async {
+                                               Get.back();
+                      _bottomCancel( controller
+                                                  .bookingData
+                                                  .value
+                                                  .listBookingDetail![index]
+                                                  .id!, context, true);
+                                  
+                                        },
+                                        child: TextConstant.subTile3(context,
+                                            text: 'Huỷ', color: Colors.red))
+                                    : SizedBox(),
                               ),
-                            )
-                         ,
+                            ),
+                          ),
                       itemCount: controller
                           .bookingData.value.listBookingDetail!.length)),
               GestureDetector(
-                onTap: () async{
-                  await controller.cancelBooking(idBooking: controller.bookingData.value!.id!);
+                onTap: () async {
+                      Get.back();
+                      _bottomCancel( controller.bookingData.value.id!, context, false);
                 },
                 child: Container(
                   height: UtilsReponsive.height(50, context),
@@ -434,7 +465,8 @@ class BookingDetailView extends GetView<BookingDetailController> {
                     child: Text('Tôi muốn huỷ hết đơn',
                         style: GoogleFonts.roboto(
                             color: Colors.white,
-                            fontSize: UtilsReponsive.formatFontSize(14, context),
+                            fontSize:
+                                UtilsReponsive.formatFontSize(14, context),
                             fontWeight: FontWeight.bold)),
                   ),
                 ),
@@ -462,6 +494,92 @@ class BookingDetailView extends GetView<BookingDetailController> {
     );
   }
 
+  _bottomCancel(String id, BuildContext context, bool isService) {
+    Get.bottomSheet(Container(
+      padding: EdgeInsets.all(UtilsReponsive.height(15, context)),
+      height: UtilsReponsive.height(400, context),
+      width: double.infinity,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(UtilsReponsive.height(15, context)),
+      ),
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            TextConstant.subTile3(context, text: 'Lý do từ chối'),
+            SizedBoxConst.size(context: context),
+            ListView.separated(
+                shrinkWrap: true,
+                itemBuilder: (context, index) => GestureDetector(
+                      onTap: () {
+                        controller.reasonChoice(
+                            controller.templateReasonCancel[index]);
+                      },
+                      child: Row(
+                        children: [
+                          Obx(
+                            () => Icon(controller.reasonChoice !=
+                                    controller.templateReasonCancel[index]
+                                ? Icons.radio_button_off_outlined
+                                : Icons.radio_button_checked),
+                          ),
+                          SizedBox(width: UtilsReponsive.height(10, context)),
+                          TextConstant.subTile2(context,
+                              text: controller.templateReasonCancel[index])
+                        ],
+                      ),
+                    ),
+                separatorBuilder: (context, index) => SizedBox(
+                      height: UtilsReponsive.height(10, context),
+                    ),
+                itemCount: controller.templateReasonCancel.length),
+            SizedBox(height: UtilsReponsive.height(10, context)),
+            Obx(() => Visibility(
+                  // ignore: unrelated_type_equality_checks
+                  visible: controller.reasonChoice == 'Khác',
+                  child: FormFieldWidget(
+                      padding: UtilsReponsive.width(10, context),
+                      controllerEditting: controller.textEdittingController,
+                      radiusBorder: UtilsReponsive.height(15, context),
+                      fillColor: Colors.grey.withOpacity(0.3),
+                      setValueFunc: (value) {}),
+                )),
+            GestureDetector(
+              onTap: () async {
+                if (isService) {
+                  await controller.cancelService(idService: id);
+                } else {
+                  await controller.cancelBooking(idBooking: id);
+                }
+              },
+              child: Container(
+                margin: EdgeInsets.only(
+                  top: UtilsReponsive.height(10, context),
+                ),
+                padding: EdgeInsets.symmetric(
+                    vertical: UtilsReponsive.height(10, context),
+                    horizontal: UtilsReponsive.height(15, context)),
+                decoration: BoxDecoration(
+                    color: Colors.redAccent,
+                    border: Border.all(color: Colors.white),
+                    borderRadius: BorderRadius.circular(
+                        UtilsReponsive.height(10, context))
+                    // shape: BoxShape.circle,
+                    ),
+                child: Text('Xác nhận',
+                    style: GoogleFonts.montserrat(
+                        color: Colors.white,
+                        fontSize: UtilsReponsive.formatFontSize(13, context),
+                        fontWeight: FontWeight.w600)),
+              ),
+            ),
+          ],
+        ),
+      ),
+    ));
+  }
+
   Row _textData(BuildContext context,
       {required String title,
       required String content,
@@ -472,17 +590,18 @@ class BookingDetailView extends GetView<BookingDetailController> {
       children: [
         Expanded(
           child: TextConstant.subTile2(context,
-          isCancel: isCancel,
-              fontWeight: FontWeight.w400, text: title, color:isCancel?Colors.red: Colors.black87),
+              isCancel: isCancel,
+              fontWeight: FontWeight.w400,
+              text: title,
+              color: isCancel ? Colors.red : Colors.black87),
         ),
         Expanded(
           child: Align(
             alignment: Alignment.centerRight,
             child: TextConstant.subTile1(context,
                 text: content,
-                isCancel:isCancel,
-                color:
-                isCancel?Colors.red:Colors.black,
+                isCancel: isCancel,
+                color: isCancel ? Colors.red : Colors.black,
                 fontWeight: isBoldContent ? FontWeight.w800 : FontWeight.w400),
           ),
         ),

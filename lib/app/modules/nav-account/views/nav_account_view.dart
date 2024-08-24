@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:theday/app/common/base_common.dart';
+import 'package:theday/app/common/model/account.dart';
 import 'package:theday/app/resource/base_define.dart';
 import 'package:theday/app/resource/reponsive_utils.dart';
 import 'package:theday/app/resource/text_style.dart';
@@ -26,7 +27,9 @@ class NavAccountView extends GetView<NavAccountController> {
           SizedBoxConst.size(context: context, size: 20),
           GestureDetector(
             onTap: () {
-              Get.toNamed(Routes.PERSONAL_ACCOUNT);
+              BaseCommon.instance.accountSession!.userId! == coupleRole?
+              Get.toNamed(Routes.PERSONAL_ACCOUNT)
+              : Get.toNamed(Routes.PERSONAL_SUPPLIER);
             },
             child: Container(
               height: UtilsReponsive.height(50, context),
