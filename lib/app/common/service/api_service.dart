@@ -92,7 +92,7 @@ class ApiService {
   Future<bool> validationWithPut(String apiUrl, {required Object body}) async {
     final response = await http.put(Uri.parse(apiUrl),
         headers: BaseCommon.instance.headerRequest(), body: jsonEncode(body));
-    log("payload: ${body.toString()}");
+    log("payload: ${jsonEncode(body)}");
     log('StatusCode ${response.statusCode} - $apiUrl');
     log('Body ${response.body}');
     if (response.statusCode == 200) {

@@ -13,7 +13,7 @@ class HomeBinding extends Bindings {
     Get.lazyPut<NavHomeController>(
       () => NavHomeController(),
     );
-       Get.lazyPut<NavAccountController>(
+    Get.lazyPut<NavAccountController>(
       () => NavAccountController(),
     );
   }

@@ -6,12 +6,11 @@ import 'package:theday/firebase_options.dart';
 
 import 'app/routes/app_pages.dart';
 
-
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
-);
+  );
   runApp(
     GetMaterialApp(
       title: "Application",

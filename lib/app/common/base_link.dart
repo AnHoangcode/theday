@@ -3,8 +3,10 @@ class BaseLink {
   static const loginWithEmailPassword = '$domain/auth/login';
   static const loginWithGoogle= '$domain/auth/loginGoogle';
   static const personalSupplier= '$domain/account/getSupplierProfile';
-  static const personalCouple= '$domain/account/getCoupleProfilee';
+  static const personalCouple= '$domain/account/getCoupleProfile';
   static const updateProfileSupplier= '$domain/account/updateSupplierProfile';
+  static const updateProfileCouple= '$domain/account/updateCoupleProfile';
+
 
   //
 

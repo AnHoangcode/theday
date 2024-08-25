@@ -1,5 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 import 'package:get/get.dart';
 import 'package:theday/app/common/base_common.dart';
@@ -16,280 +18,164 @@ class PersonalAccountView extends GetView<PersonalAccountController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        title: TextConstant.subTile2(context, text: 'Cập Nhật Tài Khoản'),
-        leading: IconButton(
-            onPressed: () {
-              Get.back();
-            },
-            icon: Icon(
-              Icons.arrow_back_ios_new,
-              color: Colors.black,
-            )),
-      ),
-      body: SafeArea(
-        child: Column(
-          children: [
-            // AppBarCustom(
-            //     callback: () {
-            //       Get.back();
-            //     },
-            //     title: 'Cập Nhật Tài Khoản'),
-            SizedBoxConst.size(context: context, size: 20),
-            Expanded(
-              child: Obx(() => controller.isLoading.value
-                  ? Center(child: LoadingWidget())
-                  : Material(
-                      child: Container(
-                        width: UtilsReponsive.width(
-                          375,
-                          context,
-                        ),
-                        height: UtilsReponsive.height(
-                          812,
-                          context,
-                        ),
-                        color: Colors.white,
-                        child: SingleChildScrollView(
-                          scrollDirection: Axis.vertical,
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              controller.isLoading.value == true
-                                  ? SizedBox()
-                                  : SizedBox(),
-                              Center(
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Container(
-                                      clipBehavior: Clip.hardEdge,
-                                      height:
-                                          UtilsReponsive.height(80, context),
-                                      width: UtilsReponsive.height(80, context),
-                                      decoration: BoxDecoration(
-                                          color: ColorManager.secondaryColor,
-                                          shape: BoxShape.circle),
-                                      child: CachedNetworkImage(
-                                        fit: BoxFit.fill,
-                                        imageUrl:
-                                            // controller
-                                            //         .account.value.avatarUrl ??
-                                            '',
-                                        placeholder: (context, url) =>
-                                            const CircularProgressIndicator(
-                                          color: Colors.white,
-                                        ),
-                                        errorWidget: (context, url, error) =>
-                                            Icon(Icons.abc),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Padding(
-                                padding: UtilsReponsive.paddingOnly(context,
-                                    top: 30, left: 20, right: 20),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Icon(Icons.person),
-                                        SizedBoxConst.sizeWith(
-                                            context: context, size: 5),
-                                        TextConstant.subTile3(
-                                          context,
-                                          text: "Họ và tên",
-                                        ),
-                                      ],
-                                    ),
-                                
-                                  ],
-                                ),
-                              ),
-                              Padding(
-                                padding: UtilsReponsive.paddingOnly(context,
-                                    top: 20, right: 20, left: 20),
-                                child: FormFieldWidget(
-                                  initValue: BaseCommon.instance.accountSession?.name??'',
-                                  // controllerEditting:
-                                  //     controller.nameController,
-                                  padding: 20,
-                                  borderColor: Colors.grey,
-                                  radiusBorder: 10,
-                                  setValueFunc: (v) {},
-                                  // isEnabled: controller.isUpdateName.value,
-                                ),
-                              ),
-                              Padding(
-                                padding: UtilsReponsive.paddingOnly(context,
-                                    top: 30, left: 20),
-                                child: Row(
-                                  children: [
-                                    Icon(Icons.email),
-                                    SizedBoxConst.sizeWith(
-                                        context: context, size: 5),
-                                    TextConstant.subTile3(
-                                      context,
-                                      text: "Email",
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Padding(
-                                padding: UtilsReponsive.paddingOnly(context,
-                                    top: 20, right: 20, left: 20),
-                                child: FormFieldWidget(
-                                  initValue: BaseCommon.instance.accountSession?.email??'',
-                                  padding: 20,
-                                  fillColor: Colors.grey.withOpacity(0.3),
-                                  borderColor: Colors.grey,
-                                  radiusBorder: 10,
-                                  isEnabled: false,
-                                  setValueFunc: (v) {},
-                                ),
-                              ),
-                              Padding(
-                                padding: UtilsReponsive.paddingOnly(context,
-                                    top: 30, left: 20, right: 20),
-                                child: Row(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Icon(Icons.phone),
-                                        SizedBoxConst.sizeWith(
-                                            context: context, size: 5),
-                                        TextConstant.subTile3(
-                                          context,
-                                          text: "Số điện thoại",
-                                        ),
-                                      ],
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Padding(
-                                padding: UtilsReponsive.paddingOnly(context,
-                                    top: 20, right: 20, left: 20),
-                                child: FormFieldWidget(
-                                // initValue: BaseCommon.instance.accountSession?.name??'',
-                                  padding: 20,
-                                  borderColor: Colors.grey,
-                                  radiusBorder: 10,
-                                  setValueFunc: (v) {},
-                                ),
-                              ),
-                              // Padding(
-                              //     padding: UtilsReponsive.paddingOnly(context,
-                              //         top: 50, left: 20, right: 20, bottom: 50),
-                              //     child: Obx(() => controller.isLockUpdate.value
-                              //         ? ElevatedButton(
-                              //             style: ElevatedButton.styleFrom(
-                              //               backgroundColor:
-                              //                   ColorsManager.primary,
-                              //               shape: RoundedRectangleBorder(
-                              //                   borderRadius:
-                              //                       BorderRadius.circular(15)),
-                              //               padding: UtilsReponsive.paddingOnly(
-                              //                   context,
-                              //                   top: 15,
-                              //                   bottom: 15),
-                              //             ),
-
-                              //             // ignore: sort_child_properties_last
-                              //             child: Container(
-                              //               alignment: Alignment.center,
-                              //               child: Text(
-                              //                 'Chỉnh sửa thông tin',
-                              //                 textAlign: TextAlign.center,
-                              //               ),
-                              //             ),
-                              //             onPressed: () async {
-                              //               controller.onTapEdit();
-                              //             },
-                              //           )
-                              //         : Row(
-                              //             mainAxisAlignment:
-                              //                 MainAxisAlignment.spaceAround,
-                              //             children: [
-                              //               Expanded(
-                              //                 child: ElevatedButton(
-                              //                   style: ElevatedButton.styleFrom(
-                              //                     backgroundColor:
-                              //                         Colors.white,
-                              //                     shape: RoundedRectangleBorder(
-                              //                       side: BorderSide(color: ColorsManager.primary),
-                              //                         borderRadius:
-                              //                             BorderRadius.circular(
-                              //                                 15)),
-                              //                     padding:
-                              //                         UtilsReponsive.paddingOnly(
-                              //                             context,
-                              //                             top: 15,
-                              //                             bottom: 15),
-                              //                   ),
-
-                              //                   // ignore: sort_child_properties_last
-                              //                   child: Container(
-                              //                     alignment: Alignment.center,
-                              //                     child: TextConstant.subTile3(context,text:
-                              //                       'Huỷ bỏ',
-                              //                       color: ColorsManager.primary,
-                              //                     ),
-                              //                   ),
-                              //                   onPressed: () async {
-                              //                     controller.onTapEdit();
-                              //                   },
-                              //                 ),
-                              //               ),
-                              //               SizedBoxConst.sizeWith(
-                              //                   context: context),
-                              //               Expanded(
-                              //                 child: ElevatedButton(
-                              //                   style: ElevatedButton.styleFrom(
-                              //                     backgroundColor:
-                              //                         ColorsManager.primary,
-                              //                     shape: RoundedRectangleBorder(
-                              //                         borderRadius:
-                              //                             BorderRadius.circular(
-                              //                                 15)),
-                              //                     padding:
-                              //                         UtilsReponsive.paddingOnly(
-                              //                             context,
-                              //                             top: 15,
-                              //                             bottom: 15),
-                              //                   ),
-
-                              //                   // ignore: sort_child_properties_last
-                              //                   child: Container(
-                              //                     alignment: Alignment.center,
-                              //                     child: Text(
-                              //                       'Cập nhật',
-                              //                       textAlign: TextAlign.center,
-                              //                     ),
-                              //                   ),
-                              //                   onPressed: () async {
-                              //                     controller.onTapEdit();
-                              //                   },
-                              //                 ),
-                              //               ),
-                              //             ],
-                              //           ))),
-                            ],
+        appBar: AppBar(
+          backgroundColor: Colors.white,
+          title: TextConstant.subTile2(context, text: 'Cập Nhật Tài Khoản'),
+          leading: IconButton(
+              onPressed: () {
+                Get.back();
+              },
+              icon: const Icon(
+                Icons.arrow_back_ios_new,
+                color: Colors.black,
+              )),
+        ),
+        body: Obx(
+          () => controller.isLoading.value
+              ? Center(
+                  child: CupertinoActivityIndicator(
+                    color: ColorManager.secondaryColor,
+                  ),
+                )
+              : SingleChildScrollView(
+                  padding: EdgeInsets.all(UtilsReponsive.height(15, context)),
+                  child: Column(
+                    children: [
+                      _formfieldInfo(context,
+                          isEnable: controller.isEnableUpdate.value,
+                          icon: Icon(
+                            Icons.person,
+                            color: ColorManager.secondaryColor,
                           ),
-                        ),
-                      ),
-                    )),
-            ),
+                          title: 'Họ và tên',
+                          textController: controller.nameController),
+                      _formfieldInfo(context,
+                          icon: Icon(
+                            Icons.email,
+                            color: ColorManager.secondaryColor,
+                          ),
+                          title: 'Email',
+                          textController: controller.emailController),
+                      _formfieldInfo(context,
+                          isEnable: controller.isEnableUpdate.value,
+                          icon: Icon(
+                            Icons.phone,
+                            color: ColorManager.secondaryColor,
+                          ),
+                          title: 'Số điện thoại',
+                          textController: controller.phoneController),
+                      SizedBoxConst.size(context: context, size: 20),
+                      controller.isEnableUpdate.value
+                          ? _comboButtonUpdate(context)
+                          : _buttonEdit(context),
+                    ],
+                  ),
+                ),
+        ));
+  }
+
+  Column _formfieldInfo(BuildContext context,
+      {required String title,
+      required Icon icon,
+      required TextEditingController textController, bool isEnable = false}) {
+    return Column(
+      children: [
+        Row(
+          children: [
+            icon,
+            SizedBoxConst.sizeWith(context: context),
+            TextConstant.subTile3(context,
+                text: title,
+                color: ColorManager.secondaryColor,
+                fontWeight: FontWeight.bold),
           ],
         ),
-      ),
+        SizedBoxConst.size(context: context),
+        FormFieldWidget(
+            fillColor: isEnable?Colors.white:Colors.grey.shade100,
+            isEnabled: isEnable,
+            padding: 15,
+            controllerEditting: textController,
+            radiusBorder: 15,
+            borderColor: Colors.black,
+            setValueFunc: (value) {}),
+        SizedBoxConst.size(context: context),
+      ],
     );
+  }
+
+  Row _comboButtonUpdate(BuildContext context) {
+    return Row(
+      children: [
+        Expanded(
+          child: ConstrainedBox(
+              constraints: BoxConstraints.tightFor(width: context.width),
+              child: ElevatedButton(
+                style: ButtonStyle(
+                  shape: MaterialStateProperty.all(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+                  backgroundColor:
+                      MaterialStateProperty.all(ColorManager.secondaryColor),
+                  padding: MaterialStateProperty.all(EdgeInsets.all(14)),
+                ),
+                child: TextConstant.subTile2(context,
+                    text: 'Cập nhật', color: Colors.white),
+                onPressed: () async {
+                  controller.updateInformation();
+                },
+              )),
+        ),
+        SizedBoxConst.sizeWith(context: context),
+        Expanded(
+          child: ConstrainedBox(
+              constraints: BoxConstraints.tightFor(width: context.width),
+              child: ElevatedButton(
+                style: ButtonStyle(
+                  shape: MaterialStateProperty.all(
+                    RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(20),
+                        side: BorderSide(color: Colors.red, width: 2)),
+                  ),
+                  backgroundColor: MaterialStateProperty.all(Colors.white),
+                  padding: MaterialStateProperty.all(EdgeInsets.all(14)),
+                ),
+                child: TextConstant.subTile2(context,
+                    text: 'Huỷ bỏ', color: Colors.red),
+                onPressed: () async {
+                  controller.cancelUpdate();
+                },
+              )),
+        )
+      ],
+    );
+  }
+
+  ConstrainedBox _buttonEdit(BuildContext context) {
+    return ConstrainedBox(
+        constraints: BoxConstraints.tightFor(width: context.width),
+        child: ElevatedButton(
+          style: ButtonStyle(
+            shape: MaterialStateProperty.all(
+              RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                  side:
+                      BorderSide(color: ColorManager.secondaryColor, width: 2)),
+            ),
+            backgroundColor: MaterialStateProperty.all(Colors.white),
+            padding: MaterialStateProperty.all(EdgeInsets.all(14)),
+          ),
+          child: controller.isUploading.value
+              ? CupertinoActivityIndicator()
+              : TextConstant.subTile2(
+                  context,
+                  text: 'Chỉnh sửa',
+                ),
+          onPressed: () async {
+            controller.isEnableUpdate.value = true;
+          },
+        ));
   }
 }

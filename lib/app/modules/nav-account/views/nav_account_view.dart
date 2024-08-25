@@ -27,7 +27,7 @@ class NavAccountView extends GetView<NavAccountController> {
           SizedBoxConst.size(context: context, size: 20),
           GestureDetector(
             onTap: () {
-              BaseCommon.instance.accountSession!.userId! == coupleRole?
+              BaseCommon.instance.accountSession!.roleName! == coupleRole?
               Get.toNamed(Routes.PERSONAL_ACCOUNT)
               : Get.toNamed(Routes.PERSONAL_SUPPLIER);
             },
