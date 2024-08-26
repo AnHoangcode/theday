@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:developer';
 
 import 'package:flutter/cupertino.dart';
@@ -5,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:theday/app/common/base_common.dart';
 import 'package:theday/app/common/model/personal_info_supplier.dart';
 import 'package:theday/app/modules/login/service/auth_service.dart';
+import 'package:theday/app/resource/util_common.dart';
 
 class PersonalSupplierController extends GetxController {
   //TODO: Implement PersonalSupplierController
@@ -19,6 +21,9 @@ class PersonalSupplierController extends GetxController {
   TextEditingController emailController = TextEditingController(text: '');
   TextEditingController phoneController = TextEditingController(text: '');
   
+  Rx<String> errorPhone = ''.obs;
+  Rx<String> errorName = ''.obs;
+
   @override
   void onInit() {
     super.onInit();
@@ -42,7 +47,7 @@ class PersonalSupplierController extends GetxController {
             userId: BaseCommon.instance.accountSession!.userId!)
         .then((value) {
       personalData.value = value;
-      prepareDataUI();
+      prepareData();
 
       isLoading.value = false;
     }).catchError((error) async {
@@ -51,22 +56,68 @@ class PersonalSupplierController extends GetxController {
     });
   }
 
-  prepareDataUI() {
-    nameController.text = personalData.value.supplierName ?? '';
-    emailController.text = personalData.value.contactEmail ?? '';
+  void cancelUpdate() {
+    isEnableUpdate(false);
+    prepareData();
+  }
+
+  void prepareData() {
+    errorName('');
+    errorPhone('');
+
+    nameController.text = personalData.value.contactPersonName ?? '';
     phoneController.text = personalData.value.contactPhone ?? '';
   }
 
-  cancelUpdate() {
-    isEnableUpdate.value = false;
-    prepareDataUI();
+  void updateInformation() {
+    if (validationAll()) {
+      PersonalInforSupplier model = PersonalInforSupplier();
+      model = personalData.value;
+      model.supplierName = nameController.text;
+      model.contactPhone = phoneController.text;
+      log('message2: ${jsonEncode(model)}');
+      isUploading(true);
+      service.updateSupplierProfile(model: model).then((value) {
+        if (value) {
+          UtilCommon.snackBar(text: 'Cập nhật thành công');
+          isUploading(false);
+          isEnableUpdate(false);
+          initData();
+        }
+      }).catchError((error) {
+        isUploading(false);
+        isEnableUpdate(false);
+        UtilCommon.snackBar(text: '${error}', isFail: true);
+        log('$error');
+      });
+    }
   }
 
-  updateInformation() {
-    isEnableUpdate(false);
-    isUploading(true);
-    Future.delayed(Duration(seconds: 2)).then((value) {
-      isUploading(false);
-    });
+  validationAll() {
+    return ![validationPhone(), validationName()]
+        .contains(false);
   }
+
+  bool validationPhone() {
+    if (phoneController.text.trim().isEmpty) {
+      errorPhone('Số điện thoại không để trống');
+      return false;
+    }
+    if (!phoneController.text.trim().isPhoneNumber) {
+      errorPhone('Không đúng định dạng');
+      return false;
+    }
+    errorPhone('');
+    return true;
+  }
+
+  bool validationName() {
+    if (nameController.text.trim().isEmpty) {
+      errorName('Tên không được để trống');
+      return false;
+    }
+      errorName('');
+    return true;
+  }
+
 }

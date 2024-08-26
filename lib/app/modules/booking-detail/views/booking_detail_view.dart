@@ -12,6 +12,7 @@ import 'package:theday/app/resource/form_field_widget.dart';
 import 'package:theday/app/resource/logo_app.dart';
 import 'package:theday/app/resource/reponsive_utils.dart';
 import 'package:theday/app/resource/text_style.dart';
+import 'package:theday/app/resource/util_common.dart';
 
 import '../controllers/booking_detail_controller.dart';
 
@@ -73,7 +74,7 @@ class BookingDetailView extends GetView<BookingDetailController> {
                             width: double.infinity,
                             padding: EdgeInsets.all(
                                 UtilsReponsive.height(10, context)),
-                            height: UtilsReponsive.height(170, context),
+                            height: UtilsReponsive.height(180, context),
                             margin: EdgeInsets.only(
                                 top: UtilsReponsive.height(40, context),
                                 left: UtilsReponsive.height(20, context),
@@ -110,12 +111,16 @@ class BookingDetailView extends GetView<BookingDetailController> {
                                               color: Colors.white),
                                           SizedBoxConst.size(
                                               context: context, size: 5),
-                                          TextConstant.subTile1(
-                                            context,
-                                            color: Colors.white,
-                                            text:
-                                                '${NumberFormat.currency(locale: 'vi_VN', symbol: 'VND').format(controller.bookingData.value.totalPrice ?? 0)}',
-                                          ),
+                                          UtilCommon.getWidgetByStatus(
+                                              context,
+                                              controller
+                                                  .bookingData.value.status!),
+                                          // TextConstant.subTile1(
+                                          //   context,
+                                          //   color: Colors.white,
+                                          //   text:
+                                          //       '${NumberFormat.currency(locale: 'vi_VN', symbol: 'VND').format(controller.bookingData.value.totalPrice ?? 0)}',
+                                          // ),
                                           SizedBoxConst.size(context: context),
                                         ],
                                       )
@@ -151,13 +156,13 @@ class BookingDetailView extends GetView<BookingDetailController> {
                                             TextConstant.subTile2(context,
                                                 color: Colors.white,
                                                 text:
-                                                    '${controller.bookingData.value.couple!.partnerName1!}'),
+                                                    '${controller.bookingData.value.couple?.partnerName1 ?? '-'}'),
                                             Icon(CupertinoIcons.heart_fill,
                                                 size: 20, color: Colors.red),
                                             TextConstant.subTile2(context,
                                                 color: Colors.white,
                                                 text:
-                                                    '${controller.bookingData.value.couple!.partnerName2!}'),
+                                                    '${controller.bookingData.value.couple?.partnerName2 ?? '-'}'),
                                           ],
                                         )),
                                   ],
@@ -262,6 +267,11 @@ class BookingDetailView extends GetView<BookingDetailController> {
                                                 .value
                                                 .listBookingDetail![index]
                                                 .status),
+                                            statusService: controller
+                                                .bookingData
+                                                .value
+                                                .listBookingDetail![index]
+                                                .status!,
                                             title: controller
                                                 .bookingData
                                                 .value
@@ -286,32 +296,6 @@ class BookingDetailView extends GetView<BookingDetailController> {
                                               '${NumberFormat.currency(locale: 'vi_VN', symbol: 'VND').format(controller.bookingData.value.totalPrice)}',
                                           isBoldContent: true),
                                       SizedBoxConst.size(context: context),
-                                      // DashedDivider(),
-                                      // SizedBoxConst.size(context: context),
-                                      // Row(
-                                      //   mainAxisAlignment:
-                                      //       MainAxisAlignment.spaceBetween,
-                                      //   children: [
-                                      //     Row(
-                                      //       children: [
-                                      //         Icon(
-                                      //           CupertinoIcons.tag_fill,
-                                      //           color:
-                                      //               ColorManager.secondaryColor,
-                                      //         ),
-                                      //         SizedBoxConst.sizeWith(
-                                      //             context: context),
-                                      //         TextConstant.subTile2(context,
-                                      //             text: 'Giảm giá'),
-                                      //       ],
-                                      //     ),
-                                      //     TextConstant.subTile3(context,
-                                      //         text: '0 VNĐ',
-                                      //         color:
-                                      //             ColorManager.secondaryColor)
-                                      //   ],
-                                      // ),
-                                      SizedBoxConst.size(context: context),
                                       DashedDivider(),
                                       SizedBoxConst.size(context: context),
                                       Row(
@@ -333,46 +317,10 @@ class BookingDetailView extends GetView<BookingDetailController> {
                                         ],
                                       ),
                                       SizedBoxConst.size(context: context),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          TextConstant.subTile3(
-                                            context,
-                                            fontWeight: FontWeight.w500,
-                                            text: 'Đặt cọc',
-                                            color: ColorManager.secondaryColor,
-                                          ),
-                                          TextConstant.textH3(context,
-                                              text: '0 VND',
-                                              color:
-                                                  ColorManager.secondaryColor,
-                                              fontWeight: FontWeight.w800),
-                                        ],
-                                      ),
-                                      SizedBoxConst.size(context: context),
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          TextConstant.subTile3(
-                                            context,
-                                            fontWeight: FontWeight.w500,
-                                            text: 'Còn lại',
-                                            color: ColorManager.secondaryColor,
-                                          ),
-                                          TextConstant.textH3(context,
-                                              text:
-                                                  '${NumberFormat.currency(locale: 'vi_VN', symbol: 'VND').format(controller.bookingData.value.totalPrice)}',
-                                              color:
-                                                  ColorManager.secondaryColor,
-                                              fontWeight: FontWeight.w800),
-                                        ],
-                                      ),
                                     ],
                                   ),
                                 ),
-                                SizedBoxConst.size(context: context, size: 100),
+                                SizedBoxConst.size(context: context, size: 200),
                               ],
                             ),
                           )
@@ -434,13 +382,15 @@ class BookingDetailView extends GetView<BookingDetailController> {
                                         pendingStatus
                                     ? GestureDetector(
                                         onTap: () async {
-                                               Get.back();
-                      _bottomCancel( controller
+                                          Get.back();
+                                          _bottomCancel(
+                                              controller
                                                   .bookingData
                                                   .value
                                                   .listBookingDetail![index]
-                                                  .id!, context, true);
-                                  
+                                                  .id!,
+                                              context,
+                                              true);
                                         },
                                         child: TextConstant.subTile3(context,
                                             text: 'Huỷ', color: Colors.red))
@@ -452,8 +402,9 @@ class BookingDetailView extends GetView<BookingDetailController> {
                           .bookingData.value.listBookingDetail!.length)),
               GestureDetector(
                 onTap: () async {
-                      Get.back();
-                      _bottomCancel( controller.bookingData.value.id!, context, false);
+                  Get.back();
+                  _bottomCancel(
+                      controller.bookingData.value.id!, context, false);
                 },
                 child: Container(
                   height: UtilsReponsive.height(50, context),
@@ -584,16 +535,35 @@ class BookingDetailView extends GetView<BookingDetailController> {
       {required String title,
       required String content,
       bool isCancel = false,
-      bool isBoldContent = false}) {
+      bool isBoldContent = false,
+      String? statusService}) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Expanded(
-          child: TextConstant.subTile2(context,
-              isCancel: isCancel,
-              fontWeight: FontWeight.w400,
-              text: title,
-              color: isCancel ? Colors.red : Colors.black87),
+          child: RichText(
+              text: TextSpan(
+                  style: Theme.of(context).textTheme.titleSmall,
+                  children: <TextSpan>[
+                TextSpan(
+                  text: title,
+                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                      decoration: isCancel? TextDecoration.lineThrough:null,
+                      color: isCancel ? Colors.red :  Colors.black,
+                      fontSize: UtilsReponsive.height(14, context)),
+                ),
+                statusService != null
+                    ? UtilCommon.getWidgetByStatusService(
+                        context, statusService)
+                    : TextSpan(
+                        text: '',
+                      ),
+              ])),
+          //  TextConstant.subTile2(context,
+          //     isCancel: isCancel,
+          //     fontWeight: FontWeight.w400,
+          //     text: title,
+          //     color: isCancel ? Colors.red : Colors.black87),
         ),
         Expanded(
           child: Align(

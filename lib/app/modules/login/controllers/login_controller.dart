@@ -14,7 +14,7 @@ class LoginController extends GetxController {
   //TODO: Implement LoginController
 
   TextEditingController emailController =
-      TextEditingController(text: 'lyhieuduy9190@gmail.com');
+      TextEditingController(text: 'letienanh2302@gmail.com');
   TextEditingController passwordController =
       TextEditingController(text: '123456789');
 
@@ -46,37 +46,41 @@ class LoginController extends GetxController {
     super.onClose();
   }
 
-  void validationEmail() {
+  bool validationEmail() {
     if (emailController.text.trim().isEmpty) {
       emailError.value = 'Email không được để rỗng';
-      return;
+      return false;
     }
     if (!emailController.text.trim().isEmail) {
       emailError.value = 'Email sai định dạng';
-      return;
+      return false;
     }
     emailError.value = '';
+    return true;
   }
 
-  void validationPassword() {
+  bool validationAll() {
+    return ![validationEmail(), validationPassword()].contains(false);
+  }
+
+  bool validationPassword() {
     if (passwordController.text.trim().isEmpty) {
       passwordError.value = 'Mật khẩu không được để trống';
-      return;
+      return false;
     }
     passwordError.value = '';
+    return true;
   }
 
   Future<void> login() async {
-    validationEmail();
-    validationPassword();
-    if (passwordError.isEmpty && emailError.isEmpty && !isLockButton.value) {
-      // Get.toNamed(Routes.HOME);
+    if (validationAll()) {
       isLockButton(true);
       service
           .loginWithEmailPassword(
               email: emailController.text, password: passwordController.text)
           .then((account) {
-        BaseCommon.instance.saveAccount(account: account);
+        BaseCommon.instance.accountSession = account;
+        BaseCommon.instance.accessToken = account.token!;
         Get.toNamed(Routes.HOME);
       }).catchError((error) {
         isLockButton(false);
@@ -103,8 +107,8 @@ class LoginController extends GetxController {
             log('hihi: ${token}');
             service
                 .loginWithGoogle(
-                    token: token!,
-                  )
+              token: token!,
+            )
                 .then((account) {
               BaseCommon.instance.saveAccount(account: account);
               Get.toNamed(Routes.HOME);

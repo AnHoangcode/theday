@@ -23,7 +23,7 @@ class NavAccountView extends GetView<NavAccountController> {
         children: [
           _avatar(context),
           SizedBoxConst.size(context: context),
-          TextConstant.subTile2(context, text: '${BaseCommon.instance.accountSession?.email}'),
+          TextConstant.subTile2(context, text: '${BaseCommon.instance.accountSession?.name}'),
           SizedBoxConst.size(context: context, size: 20),
           GestureDetector(
             onTap: () {
@@ -67,8 +67,8 @@ class NavAccountView extends GetView<NavAccountController> {
           ),
             SizedBoxConst.size(context: context, ),
           GestureDetector(
-            onTap: () {
-              controller.logout();
+            onTap: () async{
+              await controller.logout();
             },
             child: Container(
               height: UtilsReponsive.height(50, context),

@@ -41,14 +41,33 @@ class PersonalAccountView extends GetView<PersonalAccountController> {
                   padding: EdgeInsets.all(UtilsReponsive.height(15, context)),
                   child: Column(
                     children: [
-                      _formfieldInfo(context,
+                       _avatar(context, controller.dataCouple.value.account?.image??''),
+                      Obx(()=>
+                         _formfieldInfo(context,
+                            isEnable: controller.isEnableUpdate.value,
+                            icon: Icon(
+                              Icons.person,
+                              color: ColorManager.secondaryColor,
+                            ),
+                            title: 'Họ và tên',
+                            textController: controller.nameController,
+                            errorMessage: controller.errorName.value
+                            ),
+                      ),
+                     _formfieldInfo(context,
                           isEnable: controller.isEnableUpdate.value,
                           icon: Icon(
-                            Icons.person,
+                            CupertinoIcons.heart_circle_fill,
                             color: ColorManager.secondaryColor,
                           ),
-                          title: 'Họ và tên',
-                          textController: controller.nameController),
+                          title: 'Dâu - Rễ',
+                        
+                          textController: controller.partnerName1Controller),
+                      Obx(()=>   _formfieldInfo(context,
+                          isEnable: controller.isEnableUpdate.value,
+                          title: '',
+                          errorMessage: controller.errorCouple.value,
+                          textController: controller.partnerName2Controller)),
                       _formfieldInfo(context,
                           icon: Icon(
                             Icons.email,
@@ -56,14 +75,25 @@ class PersonalAccountView extends GetView<PersonalAccountController> {
                           ),
                           title: 'Email',
                           textController: controller.emailController),
-                      _formfieldInfo(context,
+                    Obx(()=>   _formfieldInfo(context,
                           isEnable: controller.isEnableUpdate.value,
                           icon: Icon(
                             Icons.phone,
                             color: ColorManager.secondaryColor,
                           ),
                           title: 'Số điện thoại',
-                          textController: controller.phoneController),
+                          textController: controller.phoneController,
+                          errorMessage: controller.errorPhone.value
+                          )),
+                        Obx(()=>  _formfieldInfo(context,
+                          icon: Icon(
+                            Icons.calendar_month,
+                            color: ColorManager.secondaryColor,
+                          ),
+                          title: 'Địa chỉ',
+                          errorMessage: controller.errorAddress.value,
+                           isEnable: controller.isEnableUpdate.value,
+                          textController: controller.addressController)),
                       SizedBoxConst.size(context: context, size: 20),
                       controller.isEnableUpdate.value
                           ? _comboButtonUpdate(context)
@@ -76,13 +106,14 @@ class PersonalAccountView extends GetView<PersonalAccountController> {
 
   Column _formfieldInfo(BuildContext context,
       {required String title,
-      required Icon icon,
-      required TextEditingController textController, bool isEnable = false}) {
+       Icon? icon,
+      required TextEditingController textController, bool isEnable = false, String errorMessage = ''}) {
     return Column(
       children: [
+        icon == null?SizedBox.shrink():
         Row(
           children: [
-            icon,
+            icon??SizedBox(),
             SizedBoxConst.sizeWith(context: context),
             TextConstant.subTile3(context,
                 text: title,
@@ -90,20 +121,45 @@ class PersonalAccountView extends GetView<PersonalAccountController> {
                 fontWeight: FontWeight.bold),
           ],
         ),
-        SizedBoxConst.size(context: context),
+        icon!=null?SizedBoxConst.size(context: context):const SizedBox.shrink(),
         FormFieldWidget(
             fillColor: isEnable?Colors.white:Colors.grey.shade100,
             isEnabled: isEnable,
+            errorText: errorMessage,
             padding: 15,
             controllerEditting: textController,
             radiusBorder: 15,
-            borderColor: Colors.black,
+            borderColor: const Color.fromARGB(255, 231, 201, 201),
             setValueFunc: (value) {}),
         SizedBoxConst.size(context: context),
       ],
     );
   }
-
+  Container _avatar(BuildContext context, String? url) {
+    return Container(
+      height: UtilsReponsive.height(90, context),
+      width: UtilsReponsive.height(90, context),
+      padding: EdgeInsets.all(UtilsReponsive.height(10, context)),
+      decoration: BoxDecoration(
+          border: Border.all(color: ColorManager.secondaryColor),
+          color: Colors.white,
+          shape: BoxShape.circle),
+      child: Container(
+        clipBehavior: Clip.hardEdge,
+        decoration: BoxDecoration(
+            color: ColorManager.secondaryColor, shape: BoxShape.circle),
+        child: CachedNetworkImage(
+          fit: BoxFit.fill,
+          imageUrl: url ?? '',
+          placeholder: (context, url) => const CircularProgressIndicator(
+            color: Colors.white,
+          ),
+          errorWidget: (context, url, error) =>
+              Image.asset('assets/theday_logo.png'),
+        ),
+      ),
+    );
+  }
   Row _comboButtonUpdate(BuildContext context) {
     return Row(
       children: [

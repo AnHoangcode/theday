@@ -20,7 +20,7 @@ class UtilCommon {
     return DateFormat('EEEE, dd MMMM yyyy', 'vi_VN').format(date);
   }
 
- static Widget getWidgetByStatus(BuildContext context, String status) {
+  static Widget getWidgetByStatus(BuildContext context, String status) {
     String text = status;
     Color color = Colors.blue;
     switch (status) {
@@ -28,7 +28,7 @@ class UtilCommon {
         text = 'Đang đợi';
         color = Colors.brown;
         break;
-       case 'APPROVED':
+      case 'APPROVED':
         text = 'Xác nhận';
         color = Colors.blue;
         break;
@@ -36,41 +36,43 @@ class UtilCommon {
         text = 'Huỷ';
         color = Colors.red;
         break;
-         case 'REJECTED':
+      case 'REJECTED':
         text = 'Từ chối';
         color = Colors.red;
         break;
-        case 'CANCELED':
+      case 'CANCELED':
         text = 'Đã huỷ';
         color = Colors.red;
         break;
-          case 'PROCESSING':
+      case 'PROCESSING':
         text = 'Đang thực hiện';
         color = Colors.blueAccent;
         break;
-         case 'COMPLETED':
+      case 'COMPLETED':
         text = 'Hoàn thành';
         color = Colors.green;
         break;
-          case 'DEPOSITED':
+      case 'DONE':
+        text = 'Hoàn thành';
+        color = Colors.green;
+        break;
+      case 'DEPOSITED':
         text = 'Đã cọc';
         color = Colors.amber.shade900;
         break;
-        //
+      //
       default:
-      text = 'Đang đợi';
+        text = 'Đang đợi';
         color = Colors.blue;
     }
     return Container(
       width: UtilsReponsive.width(120, context),
-
       padding: EdgeInsets.symmetric(
-          vertical: UtilsReponsive.height(2, context),
-        ),
-        alignment: Alignment.center,
-      decoration: BoxDecoration(
-          color: color,
-          borderRadius: BorderRadius.circular(10)),
+        vertical: UtilsReponsive.height(2, context),
+      ),
+      alignment: Alignment.center,
+      decoration:
+          BoxDecoration(color: color, borderRadius: BorderRadius.circular(10)),
       child: TextConstant.subTile3(
         context,
         size: 12,
@@ -78,6 +80,59 @@ class UtilCommon {
         color: Colors.white,
         text: text,
       ),
+    );
+  }
+
+  static TextSpan getWidgetByStatusService(
+      BuildContext context, String status) {
+    String text = status;
+    Color color = Colors.blue;
+    switch (status) {
+      case 'PENDING':
+        text = 'Đang đợi';
+        color = Colors.brown;
+        break;
+      case 'APPROVED':
+        text = 'Xác nhận';
+        color = Colors.blue;
+        break;
+      case 'CANCELLED':
+        text = 'Huỷ';
+        color = Colors.red;
+        break;
+      case 'REJECTED':
+        text = 'Từ chối';
+        color = Colors.red;
+        break;
+      case 'CANCELED':
+        text = 'Đã huỷ';
+        color = Colors.red;
+        break;
+      case 'PROCESSING':
+        text = 'Đang thực hiện';
+        color = Colors.blueAccent;
+        break;
+      case 'COMPLETED':
+        text = 'Hoàn thành';
+        color = Colors.green;
+        break;
+      case 'DONE':
+        text = 'Hoàn thành';
+        color = Colors.green;
+        break;
+      case 'DEPOSITED':
+        text = 'Đã cọc';
+        color = Colors.amber.shade900;
+        break;
+      //
+      default:
+        text = 'Đang đợi';
+        color = Colors.blue;
+    }
+    return TextSpan(
+      text: '\n(${text})',
+      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+          color: color, fontSize: UtilsReponsive.height(14, context)),
     );
   }
 }

@@ -46,24 +46,24 @@ class PersonalSupplierView extends GetView<PersonalSupplierController> {
                     children: [
                       SizedBoxConst.size(context: context, size: 20),
                       _avatar(context, controller.personalData.value.image),
-                      _formData(context,
+                     Obx(()=> _formData(context,
                           icon: Icon(Icons.person),
                           title: 'Họ và tên',
                           textController: controller.nameController,
-                          errorText: '',
-                          isEnabled: controller.isEnableUpdate.value),
+                          errorText: controller.errorName.value,
+                          isEnabled: controller.isEnableUpdate.value)),
                       _formData(context,
                           icon: Icon(Icons.mail),
                           title: 'Email',
-                          textController: controller.nameController,
+                          textController: controller.emailController,
                           errorText: '',
-                          isEnabled: controller.isEnableUpdate.value),
-                      _formData(context,
+                          ),
+                      Obx(()=> _formData(context,
                           icon: Icon(Icons.phone),
                           title: 'Số điện thoại',
                           textController: controller.phoneController,
-                          errorText: '',
-                          isEnabled: controller.isEnableUpdate.value),
+                          errorText: controller.errorPhone.value,
+                          isEnabled: controller.isEnableUpdate.value)),
                       Row(
                         children: [
                           Icon(CupertinoIcons.location),
@@ -184,8 +184,7 @@ class PersonalSupplierView extends GetView<PersonalSupplierController> {
       required String title,
       required TextEditingController textController,
       String errorText = '',
-      int maxLine = 1,
-      bool isEnabled = true}) {
+      bool isEnabled = false}) {
     return Column(
       children: [
         Row(
@@ -209,6 +208,7 @@ class PersonalSupplierView extends GetView<PersonalSupplierController> {
         FormFieldWidget(
           controllerEditting: textController,
           padding: 20,
+          fillColor: isEnabled?Colors.white: Colors.grey.shade200,
           borderColor: Colors.grey,
           radiusBorder: 15,
           errorText: errorText.isNotEmpty ? errorText : null,
