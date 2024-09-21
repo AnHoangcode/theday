@@ -67,6 +67,7 @@ class PersonalSupplierController extends GetxController {
 
     nameController.text = personalData.value.contactPersonName ?? '';
     phoneController.text = personalData.value.contactPhone ?? '';
+    emailController.text = personalData.value.contactEmail ?? '';
   }
 
   void updateInformation() {

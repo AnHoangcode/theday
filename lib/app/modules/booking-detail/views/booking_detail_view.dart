@@ -139,7 +139,7 @@ class BookingDetailView extends GetView<BookingDetailController> {
                                         TextConstant.subTile3(context,
                                             color: Colors.white,
                                             text:
-                                                '${DateFormat('dd-MM-yyyy').format(controller.bookingData.value.couple!.weddingDate!)}',
+                                                '${DateFormat('dd-MM-yyyy').format(controller.bookingData.value.weddingDate!)}',
                                             fontWeight: FontWeight.bold),
                                       ],
                                     )),
@@ -366,7 +366,10 @@ class BookingDetailView extends GetView<BookingDetailController> {
                   size: 10),
               Expanded(
                   child: ListView.builder(
-                      itemBuilder: (context, index) => Padding(
+                      itemBuilder: (context, index) => 
+                      [depositedStatusService, processingStatusService].contains(controller.bookingData.value
+                                            .listBookingDetail![index].status)?
+                      Padding(
                             padding: const EdgeInsets.all(8.0),
                             child: Card(
                               child: ListTile(
@@ -377,12 +380,9 @@ class BookingDetailView extends GetView<BookingDetailController> {
                                         .listBookingDetail![index]
                                         .serviceSupplier!
                                         .name!),
-                                trailing: controller.bookingData.value
-                                            .listBookingDetail![index].status ==
-                                        pendingStatus
-                                    ? GestureDetector(
+                                trailing:
+                                     GestureDetector(
                                         onTap: () async {
-                                          Get.back();
                                           _bottomCancel(
                                               controller
                                                   .bookingData
@@ -394,10 +394,10 @@ class BookingDetailView extends GetView<BookingDetailController> {
                                         },
                                         child: TextConstant.subTile3(context,
                                             text: 'Huỷ', color: Colors.red))
-                                    : SizedBox(),
                               ),
                             ),
-                          ),
+                          )
+                                    : SizedBox(),
                       itemCount: controller
                           .bookingData.value.listBookingDetail!.length)),
               GestureDetector(
@@ -487,11 +487,10 @@ class BookingDetailView extends GetView<BookingDetailController> {
                 itemCount: controller.templateReasonCancel.length),
             SizedBox(height: UtilsReponsive.height(10, context)),
             Obx(() => Visibility(
-                  // ignore: unrelated_type_equality_checks
-                  visible: controller.reasonChoice == 'Khác',
+                  visible: controller.reasonChoice.value == 'Khác',
                   child: FormFieldWidget(
                       padding: UtilsReponsive.width(10, context),
-                      controllerEditting: controller.textEdittingController,
+                      // controllerEditting: controller.textEdittingController,
                       radiusBorder: UtilsReponsive.height(15, context),
                       fillColor: Colors.grey.withOpacity(0.3),
                       setValueFunc: (value) {}),

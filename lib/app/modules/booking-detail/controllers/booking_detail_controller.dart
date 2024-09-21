@@ -63,6 +63,7 @@ class BookingDetailController extends GetxController {
 
   Future<void> cancelService({required String idService}) async {
     Get.back();
+    Get.back();
     isLockButtonCancel.value = true;
     String reason = reasonChoice.value;
     if (reasonChoice.value == 'Khác') {

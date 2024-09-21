@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -21,7 +22,7 @@ class NavAccountView extends GetView<NavAccountController> {
       padding: EdgeInsets.all(UtilsReponsive.height(10, context)),
       child: Column(
         children: [
-          _avatar(context),
+          _avatar(context, ''),
           SizedBoxConst.size(context: context),
           TextConstant.subTile2(context, text: '${BaseCommon.instance.accountSession?.name}'),
           SizedBoxConst.size(context: context, size: 20),
@@ -49,23 +50,6 @@ class NavAccountView extends GetView<NavAccountController> {
             ),
           ),
           SizedBoxConst.size(context: context, ),
-          Container(
-            height: UtilsReponsive.height(50, context),
-            padding: EdgeInsets.symmetric(horizontal: UtilsReponsive.width(10, context)),
-            decoration: BoxDecoration(
-              color: ColorManager.secondaryColor,
-              borderRadius: BorderRadius.circular(UtilsReponsive.height(10, context))
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Icon(Icons.history, color: Colors.white,),
-                TextConstant.subTile1(context, text: 'Lịch sử mua hàng', color: Colors.white,),
-                Icon(Icons.arrow_forward_ios_outlined, color: Colors.white,),
-              ],
-            ),
-          ),
-            SizedBoxConst.size(context: context, ),
           GestureDetector(
             onTap: () async{
               await controller.logout();
@@ -93,24 +77,28 @@ class NavAccountView extends GetView<NavAccountController> {
     );
   }
 
-  SizedBox _avatar(BuildContext context) {
-    return SizedBox(
+  Container _avatar(BuildContext context, String? url) {
+    return Container(
       height: UtilsReponsive.height(90, context),
       width: UtilsReponsive.height(90, context),
+      padding: EdgeInsets.all(UtilsReponsive.height(10, context)),
+      decoration: BoxDecoration(
+          border: Border.all(color: ColorManager.secondaryColor),
+          color: Colors.white,
+          shape: BoxShape.circle),
       child: Container(
         clipBehavior: Clip.hardEdge,
-        height: UtilsReponsive.height(90, context),
-        width: UtilsReponsive.height(90, context),
-        padding: EdgeInsets.all(UtilsReponsive.height(10, context)),
         decoration: BoxDecoration(
-            color: ColorManager.secondaryColor,
-            border: Border.all(color: ColorManager.secondaryColor),
-            shape: BoxShape.circle),
-        child: FittedBox(
-            child: Icon(
-          Icons.person,
-          color: Colors.white,
-        )),
+            color: ColorManager.secondaryColor, shape: BoxShape.circle),
+        child: CachedNetworkImage(
+          fit: BoxFit.fill,
+          imageUrl: url ?? '',
+          placeholder: (context, url) => const CircularProgressIndicator(
+            color: Colors.white,
+          ),
+          errorWidget: (context, url, error) =>
+              Image.asset('assets/theday_logo.png'),
+        ),
       ),
     );
   }

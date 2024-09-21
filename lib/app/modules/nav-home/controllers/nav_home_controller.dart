@@ -93,7 +93,7 @@ class NavHomeController extends GetxController {
   }
   Future<void> completeService({required String idService}) async {
     isLockUpdate.value = true;
-    service.completeService(idService: idService).then((check) {
+    service.doneService(idService: idService).then((check) {
       Get.back();
       isLockUpdate.value = false;
       UtilCommon.snackBar(text: 'Cập nhật thành công');

@@ -22,7 +22,7 @@ class BaseLink {
   //Supllier
   static const confirmService = '$domain/booking-service/confirm';
   static const rejectService = '$domain/booking-service/reject';
-  static const completeService = '$domain/booking-service/complete';
+  static const doneService = '$domain/booking-service/done';
   static const processingService = '$domain/booking-service/processing';
 
   //

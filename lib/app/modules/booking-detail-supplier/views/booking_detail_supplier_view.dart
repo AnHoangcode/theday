@@ -72,6 +72,7 @@ class BookingDetailSupplierView
                                       if (![
                                         cancelStatusService,
                                         completeSatus,
+                                        doneStatusService,
                                         rejectStatusService,
                                         approvedStatusService
                                       ].contains(booking.status)) {
@@ -223,7 +224,7 @@ class BookingDetailSupplierView
         Row(
           children: [
             Icon(
-              CupertinoIcons.location,
+              CupertinoIcons.location_fill,
               color: ColorManager.secondaryColor,
             ),
             SizedBoxConst.sizeWith(context: context),
@@ -231,6 +232,24 @@ class BookingDetailSupplierView
               child: TextConstant.subTile1(context,
                   text: controller
                           .bookingData.value[0].couple?.account?.address ??
+                      '',
+                  fontWeight: FontWeight.w400),
+            )
+          ],
+        ),
+        SizedBoxConst.size(context: context),
+        Row(
+          children: [
+            Icon(
+              CupertinoIcons.heart_fill,
+              color: ColorManager.secondaryColor,
+            ),
+            SizedBoxConst.sizeWith(context: context),
+            Expanded(
+              child: TextConstant.subTile1(context,
+                  text: '${controller
+                          .bookingData.value[0].couple?.partnerName1} - ${controller
+                          .bookingData.value[0].couple?.partnerName2}' ??
                       '',
                   fontWeight: FontWeight.w400),
             )
@@ -305,7 +324,8 @@ class BookingDetailSupplierView
       BookingDetailSupplier booking, BuildContext context) {
     return GestureDetector(
       onTap: () async {
-        await controller.completeService(idService: booking.bookingDetailId!);
+        Get.back();
+        await controller.doneService(idService: booking.bookingDetailId!);
       },
       child: Container(
         padding: EdgeInsets.all(UtilsReponsive.height(10, context)),
@@ -357,32 +377,6 @@ class BookingDetailSupplierView
         SizedBoxConst.size(context: context),
         GestureDetector(
           onTap: () async {
-            // await controller
-            //     .rejectService(
-            //         idService:
-            //             booking
-            //                 .bookingDetailId!);
-            Get.back();
-            // Get.bottomSheet(Container(
-            //     height: UtilsReponsive.height(300, context),
-            //     width: double.infinity,
-            //     padding: EdgeInsets.all(UtilsReponsive.height(15, context)),
-            //     decoration: BoxDecoration(
-            //         color: Colors.white,
-            //         borderRadius: BorderRadius.only(
-            //             topLeft: Radius.circular(10),
-            //             topRight: Radius.circular(10))),
-            //     child: Column(
-            //       children: [
-            //         TextConstant.subTile3(context, text: 'Lý do từ chối'),
-            //         SizedBoxConst.size(context: context),
-            //         FormFieldWidget(
-            //             radiusBorder: 10,
-            //             borderColor: Colors.black,
-            //             maxLine: 3,
-            //             setValueFunc: (value) {}),
-            //       ],
-            //     )));
             _bottomCancel(booking, context);
           },
           child: Container(

@@ -143,7 +143,7 @@ class NavHomeView extends GetView<NavHomeController> {
                       SizedBoxConst.sizeWith(context: context, size: 5),
                       TextConstant.subTile2(
                           text:
-                              '${UtilCommon.convertDateTime(project.couple!.weddingDate!)}',
+                              '${project.id} ${UtilCommon.convertDateTime(project.weddingDate!)}',
                           color: Colors.white,
                           fontWeight: FontWeight.w500,
                           context),
@@ -220,7 +220,7 @@ class NavHomeView extends GetView<NavHomeController> {
                       TextConstant.subTile3(context,
                           size: 12,
                           text:
-                              '${UtilCommon.convertDateTime(project.coupleResponse!.weddingDate!)}')
+                              '${UtilCommon.convertDateTime(project!.weddingDate!)}')
                     ],
                   ),
                   SizedBoxConst.size(context: context),

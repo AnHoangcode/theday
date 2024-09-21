@@ -70,9 +70,9 @@ class BookingService extends ApiService {
     return check;
   }
 
-  Future<bool> completeService({required String idService}) async {
+  Future<bool> doneService({required String idService}) async {
     bool check = await validationWithPut(
-        '${BaseLink.completeService}?id=$idService',
+        '${BaseLink.doneService}?id=$idService',
         body: {});
     return check;
   }

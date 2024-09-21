@@ -12,6 +12,7 @@ class BookingOverViewSupplier {
     String? id;
     dynamic note;
     double? totalPrice;
+    DateTime? weddingDate;
     DateTime? createdAt;
     String? status;
     CoupleResponse? coupleResponse;
@@ -20,6 +21,7 @@ class BookingOverViewSupplier {
         this.id,
         this.note,
         this.totalPrice,
+        this.weddingDate,
         this.createdAt,
         this.status,
         this.coupleResponse,
@@ -29,6 +31,7 @@ class BookingOverViewSupplier {
         String? id,
         dynamic note,
         double? totalPrice,
+        DateTime? weddingDate,
         DateTime? createdAt,
         String? status,
         CoupleResponse? coupleResponse,
@@ -37,6 +40,7 @@ class BookingOverViewSupplier {
             id: id ?? this.id,
             note: note ?? this.note,
             totalPrice: totalPrice ?? this.totalPrice,
+            weddingDate: weddingDate ?? this.weddingDate,
             createdAt: createdAt ?? this.createdAt,
             status: status ?? this.status,
             coupleResponse: coupleResponse ?? this.coupleResponse,
@@ -46,6 +50,7 @@ class BookingOverViewSupplier {
         id: json["id"],
         note: json["note"],
         totalPrice: json["totalPrice"]?.toDouble(),
+        weddingDate: json["weddingDate"] == null ? null : DateTime.parse(json["weddingDate"]),
         createdAt: json["createdAt"] == null ? null : DateTime.parse(json["createdAt"]),
         status: json["status"],
         coupleResponse: json["coupleResponse"] == null ? null : CoupleResponse.fromJson(json["coupleResponse"]),
@@ -55,6 +60,7 @@ class BookingOverViewSupplier {
         "id": id,
         "note": note,
         "totalPrice": totalPrice,
+        "weddingDate": "${weddingDate!.year.toString().padLeft(4, '0')}-${weddingDate!.month.toString().padLeft(2, '0')}-${weddingDate!.day.toString().padLeft(2, '0')}",
         "createdAt": createdAt?.toIso8601String(),
         "status": status,
         "coupleResponse": coupleResponse?.toJson(),
@@ -118,7 +124,7 @@ class Account {
     int? id;
     String? email;
     String? name;
-    dynamic image;
+    String? image;
     String? phoneNumber;
     String? address;
     String? status;
@@ -141,7 +147,7 @@ class Account {
         int? id,
         String? email,
         String? name,
-        dynamic image,
+        String? image,
         String? phoneNumber,
         String? address,
         String? status,

@@ -48,7 +48,6 @@ class AuthService extends ApiService {
       "district": model.area!.district,
       "image": model.image,
       "name": model.supplierName,
-      "contactPersonName": model.contactPersonName,
       "phoneNumber": model.contactPhone,
       "province": model.area!.province,
       "supplierId": model.supplierId,

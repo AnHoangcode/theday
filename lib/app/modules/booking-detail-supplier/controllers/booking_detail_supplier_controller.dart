@@ -46,15 +46,20 @@ class BookingDetailSupplierController extends GetxController {
     super.onClose();
   }
 
-  void initData(){
-   isLoading(true);
-    service.fetchBookingByIdForSupplier(bookingId: idBooking, supplierId: BaseCommon.instance.accountSession!.userId!).then((booking) {
+  void initData() {
+    isLoading(true);
+    service
+        .fetchBookingByIdForSupplier(
+            bookingId: idBooking,
+            supplierId: BaseCommon.instance.accountSession!.userId!)
+        .then((booking) {
       bookingData.value = booking;
       isLoading(false);
     }).catchError((error) async {
       isLoading(false);
       log('$error');
-    });;
+    });
+    ;
   }
 
   Future<void> confirmService({required String idService}) async {
@@ -66,8 +71,9 @@ class BookingDetailSupplierController extends GetxController {
       log('$error');
     });
   }
-  Future<void> completeService({required String idService}) async {
-    service.completeService(idService: idService).then((check) {
+
+  Future<void> doneService({required String idService}) async {
+    service.doneService(idService: idService).then((check) {
       Get.back();
       UtilCommon.snackBar(text: 'Cập nhật thành công');
       initData();
@@ -76,7 +82,8 @@ class BookingDetailSupplierController extends GetxController {
       log('$error');
     });
   }
-    Future<void> processingService({required String idService}) async {
+
+  Future<void> processingService({required String idService}) async {
     service.processService(idService: idService).then((check) {
       Get.back();
       UtilCommon.snackBar(text: 'Cập nhật thành công');
@@ -85,13 +92,15 @@ class BookingDetailSupplierController extends GetxController {
       log('$error');
     });
   }
+
   Future<void> rejectService({required String idService}) async {
-     String reason = reasonChoice.value;
+    Get.back();
+    Get.back();
+    String reason = reasonChoice.value;
     if (reasonChoice.value == 'Khác') {
       reason = textEdittingController.text;
     }
-     service.rejectService(idService: idService, note: reason).then((check) {
-      Get.back();
+    service.rejectService(idService: idService, note: reason).then((check) {
       UtilCommon.snackBar(text: 'Cập nhật thành công');
       initData();
     }).catchError((error) async {
